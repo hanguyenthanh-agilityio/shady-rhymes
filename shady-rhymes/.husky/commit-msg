@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 cd shady-rhymes
 
-pnpm lint-staged
+npx --no -- commitlint --edit 
