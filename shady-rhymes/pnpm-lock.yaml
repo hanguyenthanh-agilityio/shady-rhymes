@@ -5,6 +5,7 @@ overrides:
 
 specifiers:
   '@babel/core': ^7.21.0
+  '@builder.io/partytown': ^0.7.5
   '@chakra-ui/react': ^2.5.1
   '@commitlint/cli': ^17.4.4
   '@commitlint/config-conventional': ^17.4.4
@@ -26,9 +27,7 @@ specifiers:
   '@types/node': 18.14.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
-  babel-jest: ^29.4.3
   babel-loader: ^8.3.0
-  babel-plugin-istanbul: ^6.1.1
   eslint: 8.34.0
   eslint-config-next: 13.1.6
   eslint-config-prettier: ^8.6.0
@@ -49,6 +48,7 @@ specifiers:
   typescript: 4.9.5
 
 dependencies:
+  '@builder.io/partytown': 0.7.5
   '@chakra-ui/react': 2.5.1_xxi5qgxd6ddrb5los77xc5vtpq
   '@commitlint/cli': 17.4.4
   '@commitlint/config-conventional': 17.4.4
@@ -77,9 +77,7 @@ devDependencies:
   '@types/node': 18.14.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
-  babel-jest: 29.4.3_@babel+core@7.21.0
   babel-loader: 8.3.0_@babel+core@7.21.0
-  babel-plugin-istanbul: 6.1.1
   eslint: 8.34.0
   eslint-config-next: 13.1.6_7kw3g6rralp5ps6mg3uyzz6azm
   eslint-config-prettier: 8.6.0_eslint@8.34.0
@@ -1556,6 +1554,11 @@ packages:
   /@bcoe/v8-coverage/0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
+
+  /@builder.io/partytown/0.7.5:
+    resolution: {integrity: sha512-Zbr2Eo0AQ4yzmQr/36/h+6LKjmdVBB3Q5cGzO6rtlIKB/IOpbQVUZW+XAnhpJmJr9sIF97OZjgbhG9k7Sjn4yw==}
+    hasBin: true
+    dev: false
 
   /@chakra-ui/accordion/2.1.9_uupns7t4atiniyi2wjbakpt4y4:
     resolution: {integrity: sha512-a9CKIAUHezc0f5FR/SQ4GVxnWuIb2HbDTxTEKTp58w/J9pecIbJaNrJ5TUZ0MVbDU9jkgO9RsZ29jkja8PomAw==}

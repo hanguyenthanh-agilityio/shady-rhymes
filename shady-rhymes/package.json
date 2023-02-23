@@ -14,6 +14,7 @@
     "test": "jest --coverage"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.5",
     "@chakra-ui/react": "^2.5.1",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
