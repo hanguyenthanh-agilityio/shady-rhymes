@@ -1,6 +1,54 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# SHADY RHYMES (NEXT.JS - PRACTICE)
+
+### Author
+
+- Ha Nguyen
+
+### Overview
+
+- This document provides a detailed estimate of the Next.js practice.
+
+### Timeline
+
+- 10 days
+  - Start day: 21th February
+  - End day: 6th March
+
+### Team size
+
+- 1 Dev
+
+## Technical stack
+
+- Next.js (12.2)
+- React latest version (v18.2.0)
+  - React is declarative, efficient, and flexible Javascript library for building user interfaces. It let you compose complex UIs from small and isolated pieces of code called "component".
+- [Chakra UI](https://chakra-ui.com/) (v2.5.1)
+  - Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React application.
+- MockAPI
+- Storybook
+- Unit Test
+- typeScript
+- Vercel
+
+- Developer tools
+
+  - Eslint
+  - Prettier
+  - Husky
+  - Commitlint
+
+- Check performance score: PageSpeed insights / Lighthouse
+- GitLab
+- GitHub
+
+### Development environment
+
+- Visual Studio Code v1.39.1 (text editor)
+
+### Target
 
 First, run the development server:
 
