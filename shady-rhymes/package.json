@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "cd .. && husky install shady-rhymes/.husky"
   },
   "dependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "next": "12.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -30,6 +32,8 @@
   "lint-staged": {
     "*.{js,json,ts,tsx}": [
       "pnpm lint"
-    ]
+    ],
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
