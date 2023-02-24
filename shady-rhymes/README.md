@@ -2,21 +2,21 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 # SHADY RHYMES (NEXT.JS - PRACTICE)
 
-### Author
+## Author
 
 - Ha Nguyen
 
-### Overview
+## Overview
 
 - This document provides a detailed estimate of the Next.js practice.
 
-### Timeline
+## Timeline
 
 - 10 days
   - Start day: 21th February
   - End day: 6th March
 
-### Team size
+## Team size
 
 - 1 Dev
 
@@ -84,11 +84,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
     - GitHub is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code
 
-### Development environment
+## Development environment
 
 - Visual Studio Code v1.39.1 (text editor)
 
-### Target
+## Target
 
 - Analysis design
 - Build Next.js app with version 12.2
@@ -108,11 +108,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Deploy with vercel
 - PageSpeed score is mandatory minimum 98
 
-### Design
+## Design
 
 - Implement UI with: [Design](<https://www.figma.com/file/OW8qHTWp5H4WUyeHkr2mNr/shady-rhymes-interior-design-landing-page-(Community)?node-id=0%3A1&t=xlj0igo0NzNq18R3-0>)
 
-### Installation
+## Installation
 
 | Command                                                                    | Action                                                           |
 | :------------------------------------------------------------------------- | :--------------------------------------------------------------- |
