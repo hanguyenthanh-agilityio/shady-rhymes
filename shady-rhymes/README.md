@@ -23,26 +23,64 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Technical stack
 
 - Next.js (12.2)
+
 - React latest version (v18.2.0)
+
   - React is declarative, efficient, and flexible Javascript library for building user interfaces. It let you compose complex UIs from small and isolated pieces of code called "component".
+
 - [Chakra UI](https://chakra-ui.com/) (v2.5.1)
+
   - Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React application.
-- MockAPI
-- Storybook
-- Unit Test
-- typeScript
+
+- [Mockapi](http://mockapi.io/)
+
+  - MockAPI is a simple tool that lets you easily mock up APIs, generate custom data, and preform operations on it using RESTful interface. MockAPI is meant to be used as a prototyping/testing/learning tool.
+
+- [Storybook](https://storybook.js.org/) (v6.5.16)
+
+  - Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.
+
+- [Unit Test](https://testing-library.com/docs/react-testing-library/intro/) (v14.0.0)
+
+  - The Testing Library family of libraries is a very light-weight solution for testing without all the implementation details. The main utilities it provides involve querying for nodes similarly to how users would find them. In this way, testing-library helps ensure your tests give you confidence in your UI code.
+
+- [TypeScript](https://www.typescriptlang.org/) (4.9.5)
+
+  - TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+
 - Vercel
 
-- Developer tools
+  - Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.
 
-  - Eslint
-  - Prettier
-  - Husky
-  - Commitlint
+- Developer tools:
 
-- Check performance score: PageSpeed insights / Lighthouse
-- GitLab
-- GitHub
+  - [Eslint](https://eslint.org/docs/latest/user-guide/getting-started) (v8.34.0)
+
+    - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+
+  - [Prettier](https://prettier.io/) (v2.8.4)
+
+    - An opinionated code formatter
+    - Supports many languages
+    - Integrates with most editors
+    - Has few options
+
+  - [Husky](https://www.npmjs.com/package/husky) (v8.0.0)
+
+    - Husky is a tool that allows us to easily wrangle Git hooks and run the scripts we want at those stages.
+    - Husky improves your commits and more
+
+  - [Lint-staged](https://www.npmjs.com/package/lint-staged) (v13.1.2)
+
+    - Lint-staged is a tool that prevents bad code from leaving a developer's computer. It allows us to run commands on staged files when a developer runs git commit . If any of the commands fail then the commit also fails—preventing bad commits from being pushed to GitHub.
+
+  - Check performance score: [PageSpeed Insights](https://pagespeed.web.dev/) / Lighthouse
+
+  - Gitlab (Save and management source code)
+
+  - Github
+
+    - GitHub is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code
 
 ### Development environment
 
@@ -50,33 +88,36 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ### Target
 
-First, run the development server:
+- Analysis design
+- Build Next.js app with version 12.2
+- Build React app with the latest version (v18+)
+- Practice with next.js
+  - Next.config.js
+  - handle Script (with Partytown)
+  - Data fetching
+  - Dynamic routes
+  - APIs
+    - Next/link
+    - next/script
+    - next/head
+    - next/image
+- Apply Storybook
+- Apply Unit Test
+- Deploy with vercel
+- PageSpeed score is mandatory minimum 98
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Design
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Implement UI with: [Design](<https://www.figma.com/file/OW8qHTWp5H4WUyeHkr2mNr/shady-rhymes-interior-design-landing-page-(Community)?node-id=0%3A1&t=xlj0igo0NzNq18R3-0>)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Command                                                                    | Action                                                           |
+| :------------------------------------------------------------------------- | :--------------------------------------------------------------- |
+| `git clone git@gitlab.asoft-python.com:ha.nguyenthanh/nextjs-training.git` | Create a copy of the target repository                           |
+| `cd feature/shady-rhymes`                                                  | Change directory to shady-rhymes                                 |
+| `pnpm install`                                                             | Installs dependencies                                            |
+| `pnpm run dev`                                                             | Start local dev server at localhost:3000                         |
+| `pnpm lint`                                                                | Check warning & error following ESLint                           |
+| `pnpm storybook`                                                           | Run the storybook to review all the components at localhost:6006 |
+| `pnpm test`                                                                | Run unit test                                                    |
