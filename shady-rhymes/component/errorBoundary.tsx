@@ -35,7 +35,7 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
-        <Box>
+        <Box data-testid="error-boundary">
           <Text>Oops, there is an error!</Text>
           <Button onClick={() => this.setState({ hasError: false })}>
             Try again?

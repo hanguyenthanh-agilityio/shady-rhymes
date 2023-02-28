@@ -5,6 +5,9 @@ module.exports = {
     '!**/node_modules/**'
   ],
   moduleNameMapper: {
+    '/^(.*)$/': '<rootDir>/__test__',
+    '../components/(.*)': '<rootDiv>/component/$1',
+
     /* Handle CSS imports (with CSS modules)
     https://jestjs.io/docs/webpack#mocking-css-modules */
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
