@@ -2,8 +2,8 @@ import { Button } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import Layout from '../component/layout';
-import Navbar from '../component/navbar';
+import Layout from '../components/layout';
+import Navbar from '../components/navbar';
 import { NAV_ITEMS } from '../constants/common';
 import styles from '../styles/Home.module.css';
 

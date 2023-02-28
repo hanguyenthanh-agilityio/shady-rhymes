@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 // Components
-import { Box, Stack } from '@chakra-ui/react';
+import { Box, Stack, Text } from '@chakra-ui/react';
 
 // Types
 import { NavItem } from '../types/common';
@@ -23,6 +23,7 @@ const Navbar = ({ navItem }: NavbarProps) => {
           <Link href="/">{label}</Link>
         </Box>
       ))}
+      <Text>NAvbar</Text>
     </Stack>
   );
 };
