@@ -27,7 +27,7 @@ const Rating = ({ rating }: RatingProps) => {
             <BsStarHalf
               key={index}
               style={{ marginLeft: '4' }}
-              color="icon.rating"
+              color="#dfb300"
             />
           );
         }
