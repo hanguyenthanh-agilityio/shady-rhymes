@@ -2,7 +2,8 @@ module.exports = {
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
-    '!**/node_modules/**'
+    '!**/node_modules/**',
+    '!**/__test__/__snapshots__/*.test.{js,ts,jsx,tsx}.snap'
   ],
   moduleNameMapper: {
     '/^(.*)$/': '<rootDir>/__test__',
