@@ -16,6 +16,7 @@
   "dependencies": {
     "@babel/runtime": "^7.21.0",
     "@builder.io/partytown": "^0.7.5",
+    "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.5.1",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
