@@ -1,12 +1,9 @@
-import { Button } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import Layout from '../components/layout';
+import Card from '../components/card';
 import Navbar from '../components/navbar';
 import SearchInput from '../components/searchInput';
 import { NAV_ITEMS } from '../constants/common';
-import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +16,16 @@ const Home: NextPage = () => {
       {/* Navbar */}
       <Navbar navItem={NAV_ITEMS} />
       <SearchInput />
+      <Card
+        src=""
+        altText="desk"
+        width={425}
+        height={400}
+        productName="Product"
+        helperText="Category"
+        subText="IDR 795.000"
+        rating={2.5}
+      />
     </>
   );
 };

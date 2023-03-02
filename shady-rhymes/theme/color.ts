@@ -10,12 +10,19 @@ const colors = {
 
   background: {},
 
+  heading: {
+    default: '#564e4e'
+  },
+
   text: {
-    reversal: '#fff'
+    default: '#564e4e',
+    reversal: '#fff',
+    helper: '#c4c4c4'
   },
 
   icon: {
-    primary: '#a09386'
+    primary: '#a09386',
+    rating: '#dfb300'
   }
 };
 
