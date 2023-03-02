@@ -8,6 +8,10 @@ export const Text = {
     small: {
       fontSize: '14px',
       lightHeight: '28px'
+    },
+    medium: {
+      fontSize: '18px',
+      lightHeight: '36px'
     }
   },
 

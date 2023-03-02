@@ -4,6 +4,10 @@ export const Heading = {
     fontWeight: '700'
   },
   sizes: {
+    huge: {
+      fontSize: '48px',
+      lineHeight: '72px'
+    },
     small: {
       fontSize: '18px',
       lineHeight: '36px'

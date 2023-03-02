@@ -4,6 +4,7 @@ import Card from '../components/card';
 import Navbar from '../components/navbar';
 import SearchInput from '../components/searchInput';
 import { NAV_ITEMS } from '../constants/common';
+import Hero from '../layouts/hero';
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
       {/* Navbar */}
       <Navbar navItem={NAV_ITEMS} />
       <SearchInput />
+      <Hero />
       <Card
         src=""
         altText="desk"
