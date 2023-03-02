@@ -6,6 +6,16 @@ const colors = {
     80: '#2f79d0',
     40: '#70b7f4',
     30: '#edf2f7'
+  },
+
+  background: {},
+
+  text: {
+    reversal: '#fff'
+  },
+
+  icon: {
+    primary: '#a09386'
   }
 };
 

@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/layout';
 import Navbar from '../components/navbar';
+import SearchInput from '../components/searchInput';
 import { NAV_ITEMS } from '../constants/common';
 import styles from '../styles/Home.module.css';
 
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
       </Head>
       {/* Navbar */}
       <Navbar navItem={NAV_ITEMS} />
+      <SearchInput />
     </>
   );
 };
