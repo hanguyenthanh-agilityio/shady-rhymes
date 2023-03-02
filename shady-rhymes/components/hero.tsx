@@ -8,8 +8,7 @@ import {
   Button,
   Heading
 } from '@chakra-ui/react';
-import Image from 'next/image';
-import SearchInput from '../components/searchInput';
+import SearchInput from './searchInput';
 
 const Hero = () => {
   return (
