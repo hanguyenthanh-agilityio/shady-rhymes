@@ -17,7 +17,8 @@ const colors = {
   text: {
     default: '#564e4e',
     reversal: '#fff',
-    helper: '#c4c4c4'
+    helper: '#c4c4c4',
+    primary: '#fadcd9'
   },
 
   icon: {

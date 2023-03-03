@@ -1,4 +1,4 @@
-import { NavItem } from '../types/common';
+import { ListItem, NavItem } from '../types/common';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Furniture' },
@@ -32,4 +32,29 @@ export const INTRO = [
     text: 'Our employees are the best of the field from the city',
     subText: 'more info'
   }
+];
+
+export const FEATURE: ListItem[] = [
+  { label: 'Our Features' },
+  { label: 'Pricing' },
+  { label: 'Affiliate Program' },
+  { label: 'Press Kit' }
+];
+
+export const SUPPORT: ListItem[] = [
+  { label: 'Account' },
+  { label: 'Help' },
+  { label: 'Contact Us' }
+];
+
+export const LEGAL: ListItem[] = [
+  { label: 'Privacy Policy' },
+  { label: 'Terms of  Use' }
+];
+
+export const MEDIA: ListItem[] = [
+  { label: 'Twitter' },
+  { label: 'Product Hunt' },
+  { label: 'Instagram' },
+  { label: 'Github' }
 ];
