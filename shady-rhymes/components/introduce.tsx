@@ -4,7 +4,7 @@ import Feature from './feature';
 
 const Introduce = () => {
   return (
-    <Container>
+    <Container mb="80px">
       <Heading size="large" fontWeight={500} pt="70px" pb="16px">
         Why Choosing Us
       </Heading>
