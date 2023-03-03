@@ -1,4 +1,4 @@
-import { ListItem, NavItem } from '../types/common';
+import { ListItem, NavItem, Service } from '../types/common';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Furniture' },
@@ -31,6 +31,33 @@ export const INTRO = [
     title: 'Qualified employee',
     text: 'Our employees are the best of the field from the city',
     subText: 'more info'
+  }
+];
+
+export const SERVICES: Service[] = [
+  {
+    title: 'Best planning service',
+    text: 'I had fantastic experience at shady rhymes with pax planner, shady rhymes was so helpful and friendly and went above and beyond to help me configure my perfect walk in wardobe room.',
+    avatarName: 'john',
+    avatarSrc: '/',
+    name: 'John Doe',
+    intro: 'Project manager of cupalo'
+  },
+  {
+    title: 'Best planning service',
+    text: 'I had fantastic experience at shady rhymes with pax planner, shady rhymes was so helpful and friendly and went above and beyond to help me configure my perfect walk in wardobe room.',
+    avatarName: 'john',
+    avatarSrc: '/',
+    name: 'John Doe',
+    intro: 'Project manager of cupalo'
+  },
+  {
+    title: 'Best planning service',
+    text: 'I had fantastic experience at shady rhymes with pax planner, shady rhymes was so helpful and friendly and went above and beyond to help me configure my perfect walk in wardobe room.',
+    avatarName: 'john',
+    avatarSrc: '/',
+    name: 'John Doe',
+    intro: 'Project manager of cupalo'
   }
 ];
 
