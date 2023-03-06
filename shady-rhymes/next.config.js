@@ -4,6 +4,10 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     nextScriptWorkers: true
+  },
+
+  images: {
+    domains: ['']
   }
 };
 

@@ -5,17 +5,24 @@ import type { AppProps } from 'next/app';
 import ErrorBoundary from '../components/errorBoundary';
 import { ChakraProvider } from '@chakra-ui/react';
 
-// 1. Import the extendTheme function
+// Import the extendTheme function
 import CHAKRA_THEME_DEFAULT from '../theme/chakra';
 
-// 3. Pass the `theme` prop to the `ChakraProvider`
+// Import React-query
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+// Pass the `theme` prop to the `ChakraProvider`
 function MyApp({ Component, pageProps }: AppProps) {
+  const queryClient = new QueryClient();
+
   return (
-    <ChakraProvider theme={CHAKRA_THEME_DEFAULT}>
-      <ErrorBoundary>
-        <Component {...pageProps} />
-      </ErrorBoundary>
-    </ChakraProvider>
+    <QueryClientProvider client={queryClient}>
+      <ChakraProvider theme={CHAKRA_THEME_DEFAULT}>
+        <ErrorBoundary>
+          <Component {...pageProps} />
+        </ErrorBoundary>
+      </ChakraProvider>
+    </QueryClientProvider>
   );
 }
 

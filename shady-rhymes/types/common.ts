@@ -14,3 +14,14 @@ export type Service = {
   name: string;
   intro: string;
 };
+
+export type Product = {
+  src: string;
+  altText?: string;
+  width?: number;
+  height?: number;
+  productName: string;
+  helperText: string;
+  subText: string;
+  rating: number;
+};

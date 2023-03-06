@@ -4,11 +4,15 @@ import Feature from '../components/feature';
 import Footer from '../components/footer';
 import Hero from '../components/hero';
 import Introduce from '../components/introduce';
+import ListProduct from '../components/listProduct';
 import Services from '../components/services';
 import Visualize from '../components/visualize';
-import { SERVICES } from '../constants/common';
+import { PRODUCT, SERVICES } from '../constants/common';
+import { useProductListQuery } from '../services/blog';
 
 const Home: NextPage = () => {
+  const { data: blogs } = useProductListQuery();
+
   return (
     <>
       <Head>
@@ -19,6 +23,7 @@ const Home: NextPage = () => {
       <Hero />
       <Introduce />
       <Visualize />
+      <ListProduct productItem={blogs} />
       <Services heading="What they say about our services" service={SERVICES} />
       <Footer />
     </>
