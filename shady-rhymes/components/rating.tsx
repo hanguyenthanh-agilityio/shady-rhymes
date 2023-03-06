@@ -8,6 +8,7 @@ interface RatingProps {
 
 const Rating = ({ rating }: RatingProps) => {
   const totalStars = 5;
+
   return (
     <Flex>
       {[...new Array(totalStars)].map((_, index) => {
