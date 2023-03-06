@@ -12,6 +12,10 @@ export const Text = {
     medium: {
       fontSize: '18px',
       lightHeight: '36px'
+    },
+    large: {
+      fontSize: '24px',
+      lightHeight: '48px'
     }
   },
 

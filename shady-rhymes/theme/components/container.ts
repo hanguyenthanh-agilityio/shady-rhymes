@@ -6,9 +6,9 @@ export const Container = {
       maxW: {
         xs: '335px',
         md: '636px',
-        lg: '900px',
-        xl: '1220px',
-        xxl: '1700px'
+        lg: '1750px'
+        // xl: '1220px',
+        // xxl: '1700px'
       }
     }
   },
