@@ -1,12 +1,4 @@
-import {
-  Box,
-  Container,
-  Flex,
-  Heading,
-  SimpleGrid,
-  Stack,
-  Text
-} from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
 const Visualize = () => {

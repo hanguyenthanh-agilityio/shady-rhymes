@@ -1,4 +1,4 @@
-import { ListItem, NavItem, Service } from '../types/common';
+import { ListItem, NavItem, Product, Service } from '../types/common';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Furniture' },
@@ -84,4 +84,77 @@ export const MEDIA: ListItem[] = [
   { label: 'Product Hunt' },
   { label: 'Instagram' },
   { label: 'Github' }
+];
+
+export const PRODUCT: Product[] = [
+  {
+    src: 'https://www.figma.com/file/OW8qHTWp5H4WUyeHkr2mNr/shady-rhymes-interior-design-landing-page-(Community)?node-id=18%3A85&t=hzOZC6rVqXACBAeR-0',
+    altText: 'product',
+    width: 400,
+    height: 425,
+    productName: 'Product',
+    helperText: 'Category',
+    subText: 'IDR 795.000',
+    rating: 2
+  },
+  {
+    src: '/',
+    altText: 'product',
+    width: 400,
+    height: 425,
+    productName: 'Product',
+    helperText: 'Category',
+    subText: 'IDR 795.000',
+    rating: 2
+  },
+  {
+    src: '/',
+    altText: 'product',
+    width: 400,
+    height: 425,
+    productName: 'Product',
+    helperText: 'Category',
+    subText: 'IDR 795.000',
+    rating: 2
+  },
+  {
+    src: '/',
+    altText: 'product',
+    width: 400,
+    height: 425,
+    productName: 'Product',
+    helperText: 'Category',
+    subText: 'IDR 795.000',
+    rating: 2
+  },
+  {
+    src: '/',
+    altText: 'product',
+    width: 400,
+    height: 425,
+    productName: 'Product',
+    helperText: 'Category',
+    subText: 'IDR 795.000',
+    rating: 2
+  },
+  {
+    src: '/',
+    altText: 'product',
+    width: 400,
+    height: 425,
+    productName: 'Product',
+    helperText: 'Category',
+    subText: 'IDR 795.000',
+    rating: 2
+  },
+  {
+    src: '/',
+    altText: 'product',
+    width: 400,
+    height: 425,
+    productName: 'Product',
+    helperText: 'Category',
+    subText: 'IDR 795.000',
+    rating: 2
+  }
 ];
