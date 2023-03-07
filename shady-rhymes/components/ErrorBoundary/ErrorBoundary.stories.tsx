@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 // Components
-import ErrorBoundary from '../../components/errorBoundary';
+import ErrorBoundary from '.';
 
 export default {
   title: 'Components/ErrorBoundary',

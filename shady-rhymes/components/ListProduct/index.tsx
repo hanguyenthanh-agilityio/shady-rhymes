@@ -1,7 +1,11 @@
-import { Container, Flex, Heading, SimpleGrid } from '@chakra-ui/react';
 import { memo } from 'react';
-import { Product } from '../types/common';
-import Card from './card';
+
+// Types
+import { Product } from '../../types/common';
+
+// Components
+import Card from '../Card';
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
 
 interface ListProductProps {
   productItem: Product[];

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Box, Stack } from '@chakra-ui/react';
 
 // Types
-import { NavItem } from '../types/common';
+import { NavItem } from '../../types/common';
 
 interface NavbarProps {
   navItem: NavItem[];

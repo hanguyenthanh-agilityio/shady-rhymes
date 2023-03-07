@@ -2,7 +2,7 @@ import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 // Components
-import SearchInput from '../components/searchInput';
+import SearchInput from '..';
 
 describe('SearchInput component', () => {
   const props = {

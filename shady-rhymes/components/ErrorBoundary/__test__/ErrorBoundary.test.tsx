@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 // Components
-import ErrorBoundary from '../components/errorBoundary';
+import ErrorBoundary from '..';
 
 beforeEach(() => {
   jest.spyOn(global.console, 'log');

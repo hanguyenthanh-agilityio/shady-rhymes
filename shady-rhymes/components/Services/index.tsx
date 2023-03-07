@@ -1,3 +1,4 @@
+// Components
 import {
   Avatar,
   Box,
@@ -8,7 +9,9 @@ import {
   Stack,
   Text
 } from '@chakra-ui/react';
-import { Service } from '../types/common';
+
+// Types
+import { Service } from '../../types/common';
 
 interface ServicesProps {
   heading: string;

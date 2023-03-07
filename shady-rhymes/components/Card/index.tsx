@@ -1,7 +1,9 @@
-import { Box, Flex, Heading, Icon, Text } from '@chakra-ui/react';
-import Image from 'next/image';
 import { memo } from 'react';
-import Rating from './rating';
+import Image from 'next/image';
+
+// Components
+import Rating from '../Rating';
+import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 
 interface CardProps {
   src: string;

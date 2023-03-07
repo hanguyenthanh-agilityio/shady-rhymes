@@ -1,6 +1,10 @@
 import { Container, Flex, Heading } from '@chakra-ui/react';
-import { INTRO } from '../constants/common';
-import Feature from './feature';
+
+// Constants
+import { INTRO } from '../../constants/common';
+
+// Components
+import Feature from '../Feature';
 
 const Introduce = () => {
   return (

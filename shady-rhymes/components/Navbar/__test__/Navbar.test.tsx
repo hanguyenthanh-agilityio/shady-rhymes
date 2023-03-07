@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
 // Constants
-import { NAV_ITEMS } from '../constants/common';
+import { NAV_ITEMS } from '../../../constants/common';
 
 // Components
-import Navbar from '../components/navbar';
+import Navbar from '..';
 
 describe('Navbar component', () => {
   it('should render Navbar snapshot correctly', () => {

@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 
 // Components
-import ErrorBoundary from '../components/errorBoundary';
+import ErrorBoundary from '../components/ErrorBoundary';
 import { ChakraProvider } from '@chakra-ui/react';
 
 // Import the extendTheme function

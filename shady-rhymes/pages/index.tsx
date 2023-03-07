@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Feature from '../components/feature';
-import Footer from '../components/footer';
-import Hero from '../components/hero';
-import Introduce from '../components/introduce';
-import ListProduct from '../components/listProduct';
-import Services from '../components/services';
-import Visualize from '../components/visualize';
+import Feature from '../components/Feature';
+import Footer from '../components/Footer';
+import Hero from '../components/Hero';
+import Introduce from '../components/Introduce';
+import ListProduct from '../components/ListProduct';
+import Services from '../components/Services';
+import Visualize from '../components/Visualize';
 import { PRODUCT, SERVICES } from '../constants/common';
 import { useProductListQuery } from '../services/blog';
 

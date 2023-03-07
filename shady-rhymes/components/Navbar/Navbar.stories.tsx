@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Navbar from '../../components/navbar';
+import Navbar from '.';
 import { NAV_ITEMS } from '../../constants/common';
 
 // Components

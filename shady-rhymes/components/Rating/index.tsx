@@ -1,5 +1,6 @@
 import { Flex } from '@chakra-ui/react';
 
+// Components
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 
 interface RatingProps {

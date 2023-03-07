@@ -1,5 +1,7 @@
-import { Box, Container, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
+
+// Components
+import { Container, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 
 const Visualize = () => {
   return (

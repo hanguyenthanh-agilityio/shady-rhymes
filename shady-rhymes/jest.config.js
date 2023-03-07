@@ -3,7 +3,7 @@ module.exports = {
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
-    '!**/__test__/__snapshots__/*.test.{js,ts,jsx,tsx}.snap'
+    '!component/**/__test__/__snapshots__/*.test.{js,ts,tsx}.snap'
   ],
   moduleNameMapper: {
     '/^(.*)$/': '<rootDir>/__test__',

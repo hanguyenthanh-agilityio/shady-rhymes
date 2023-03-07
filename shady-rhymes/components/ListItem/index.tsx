@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 // Types
-import { ListItem } from '../types/common';
+import { ListItem } from '../../types/common';
 
 // Components
 import { List, ListItem as ListItemChakra } from '@chakra-ui/react';

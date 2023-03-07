@@ -1,18 +1,11 @@
 import Image from 'next/image';
 
 // Constants
-import { FEATURE, LEGAL, MEDIA, SUPPORT } from '../constants/common';
+import { FEATURE, LEGAL, MEDIA, SUPPORT } from '../../constants/common';
 
 // Components
-import ListItem from './listItem';
-import {
-  Box,
-  Container,
-  Link,
-  SimpleGrid,
-  Stack,
-  Text
-} from '@chakra-ui/react';
+import ListItem from '../ListItem';
+import { Box, Container, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 
 const Footer = () => {
   return (
