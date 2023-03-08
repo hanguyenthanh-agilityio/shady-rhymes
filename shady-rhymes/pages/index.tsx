@@ -7,12 +7,14 @@ import Introduce from '../components/Introduce';
 import ListProduct from '../components/ListProduct';
 import Services from '../components/Services';
 import Visualize from '../components/Visualize';
-import { PRODUCT, SERVICES } from '../constants/common';
-import { useProductListQuery } from '../services/blog';
+import { SERVICES } from '../constants/common';
+import { Product } from '../types/common';
 
-const Home: NextPage = () => {
-  const { data: blogs } = useProductListQuery();
+interface Props {
+  blogs: Product[];
+}
 
+const Home: NextPage<Props> = ({ blogs }) => {
   return (
     <>
       <Head>
@@ -28,6 +30,17 @@ const Home: NextPage = () => {
       <Footer />
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch('https://6405632440597b65de35cc7e.mockapi.io/blogs');
+  const data = await res.json();
+
+  return {
+    props: {
+      blogs: data
+    }
+  };
 };
 
 export default Home;
