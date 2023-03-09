@@ -7,6 +7,7 @@ import { blurDataURL } from '../../utils/utils';
 // Components
 import Rating from '../Rating';
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 
 interface CardProps {
   src: string;
@@ -32,18 +33,26 @@ const Card = ({
   return (
     <Flex flexDir="column">
       <Box maxW="400px">
-        <Image
-          src={src}
-          alt={altText}
-          width={width}
-          height={height}
-          placeholder="blur"
-          blurDataURL={blurDataURL()}
-          style={{
-            maxWidth: '100%',
-            height: 'auto'
+        <Link
+          href={{
+            pathname: '/blog/[id]'
           }}
-        />
+        >
+          <a>
+            <Image
+              src={src}
+              alt={altText}
+              width={width}
+              height={height}
+              placeholder="blur"
+              blurDataURL={blurDataURL()}
+              style={{
+                maxWidth: '100%',
+                height: 'auto'
+              }}
+            />
+          </a>
+        </Link>
       </Box>
       <Flex flexDir="column" pl="20px">
         <Heading fontWeight={400}>{productName}</Heading>
