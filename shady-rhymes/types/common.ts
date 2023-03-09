@@ -16,6 +16,7 @@ export type Service = {
 };
 
 export type Product = {
+  id: string;
   src: string;
   altText?: string;
   productName: string;
