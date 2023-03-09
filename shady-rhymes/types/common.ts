@@ -18,8 +18,6 @@ export type Service = {
 export type Product = {
   src: string;
   altText?: string;
-  width?: number;
-  height?: number;
   productName: string;
   helperText: string;
   subText: string;
