@@ -8,45 +8,46 @@ import { Product } from '../../types/common';
 // Utils
 import { blurDataURL } from '../../utils/utils';
 
-const Detail = (blogs: Product) => {
+const Detail = ({ blog }: { blog: Product }) => {
   return (
     <Flex flexDir="column">
       <Box maxW="400px">
         <Image
-          src={blogs.id}
-          alt={blogs.altText}
+          id={blog.id}
+          src={blog.src}
+          alt={blog.altText}
+          width={425}
+          height={400}
           placeholder="blur"
           blurDataURL={blurDataURL()}
           style={{
             maxWidth: '100%',
-            height: 'auto'
+            height: 'auto',
+            objectFit: 'cover'
           }}
         />
       </Box>
       <Flex flexDir="column" pl="20px">
-        <Heading fontWeight={400}>{blogs.productName}</Heading>
+        <Heading fontWeight={400}>{blog.productName}</Heading>
         <Text variant="helper" py="10px">
-          {blogs.helperText}
+          {blog.helperText}
         </Text>
-        <Rating rating={blogs.rating} />
-        <Text pt="18px">{blogs.subText}</Text>
+        <Rating rating={blog.rating} />
+        <Text pt="18px">{blog.subText}</Text>
       </Flex>
     </Flex>
   );
 };
 
 export const getStaticProps = async ({ params }: any) => {
-  console.log('param', params);
-
   const res = await fetch(
     `https://6405632440597b65de35cc7e.mockapi.io/blogs/${params.id}`
   );
   const data = await res.json();
-  console.log('data', data);
 
   return {
     props: {
-      blogs: data
+      blog: data
     }
   };
 };
@@ -55,26 +56,14 @@ export const getStaticPaths = async () => {
   const res = await fetch('https://6405632440597b65de35cc7e.mockapi.io/blogs');
   const data = await res.json();
 
-  // Get the paths we want to pre-render based on posts
-  const paths = data.map((blogs: Product) => ({
-    params: { id: blogs.id.toString() }
+  // Get the paths we want to pre-render based on blogs
+  const paths = data.map((blog: Product) => ({
+    params: { id: blog.id.toString() }
   }));
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
   return { paths, fallback: false };
-
-  // return {
-
-  //   paths: data.map((blogs: Product) => {
-  //     return {
-  //       params: {
-  //         id: blogs.id
-  //       }
-  //     };
-  //   }),
-  //   fallBack: false
-  // };
 };
 
 export default Detail;

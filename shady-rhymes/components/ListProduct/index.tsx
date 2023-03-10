@@ -27,12 +27,17 @@ const ListProduct = ({ productItem }: ListProductProps) => {
         {productItem
           .slice(0, 4)
           .map(
-            (
-              { src, altText, productName, helperText, subText, rating },
-              index
-            ) => (
+            ({
+              id,
+              src,
+              altText,
+              productName,
+              helperText,
+              subText,
+              rating
+            }) => (
               <Card
-                key={index}
+                key={id}
                 src={src}
                 altText={altText}
                 width={400}
@@ -41,6 +46,7 @@ const ListProduct = ({ productItem }: ListProductProps) => {
                 helperText={helperText}
                 subText={subText}
                 rating={rating}
+                id={id}
               />
             )
           )}

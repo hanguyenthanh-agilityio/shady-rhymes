@@ -18,6 +18,7 @@ interface CardProps {
   helperText: string;
   subText: string;
   rating: number;
+  id?: string;
 }
 
 const Card = ({
@@ -28,14 +29,16 @@ const Card = ({
   productName,
   helperText,
   subText,
-  rating
+  rating,
+  id
 }: CardProps) => {
   return (
     <Flex flexDir="column">
       <Box maxW="400px">
         <Link
           href={{
-            pathname: '/blog/[id]'
+            pathname: '/blogs/[id]/',
+            query: { id: id }
           }}
         >
           <a>
