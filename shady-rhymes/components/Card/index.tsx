@@ -6,7 +6,7 @@ import { blurDataURL } from '../../utils/utils';
 
 // Components
 import Rating from '../Rating';
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
 interface CardProps {
@@ -18,7 +18,8 @@ interface CardProps {
   helperText: string;
   subText: string;
   rating: number;
-  id?: string;
+  id: string;
+  onClick: (id: string) => void;
 }
 
 const Card = ({
@@ -30,8 +31,13 @@ const Card = ({
   helperText,
   subText,
   rating,
-  id
+  id,
+  onClick
 }: CardProps) => {
+  const handleClick = () => {
+    return onClick(id);
+  };
+
   return (
     <Flex flexDir="column">
       <Box maxW="400px">
@@ -64,6 +70,7 @@ const Card = ({
         </Text>
         <Rating rating={rating} />
         <Text pt="18px">{subText}</Text>
+        <Button onClick={handleClick}>Delete</Button>
       </Flex>
     </Flex>
   );
