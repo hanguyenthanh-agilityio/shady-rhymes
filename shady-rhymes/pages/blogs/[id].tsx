@@ -1,7 +1,16 @@
 import Image from 'next/image';
 
 // Components
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  SimpleGrid,
+  Stack,
+  Text
+} from '@chakra-ui/react';
 import Rating from '../../components/Rating';
 import { Product } from '../../types/common';
 
@@ -10,32 +19,68 @@ import { blurDataURL } from '../../utils/utils';
 
 const Detail = ({ blog }: { blog: Product }) => {
   return (
-    <Flex flexDir="column">
-      <Box maxW="400px">
-        <Image
-          id={blog.id}
-          src={blog.src}
-          alt={blog.altText}
-          width={425}
-          height={400}
-          placeholder="blur"
-          blurDataURL={blurDataURL()}
-          style={{
-            maxWidth: '100%',
-            height: 'auto',
-            objectFit: 'cover'
-          }}
-        />
-      </Box>
-      <Flex flexDir="column" pl="20px">
-        <Heading fontWeight={400}>{blog.productName}</Heading>
-        <Text variant="helper" py="10px">
-          {blog.helperText}
-        </Text>
-        <Rating rating={blog.rating} />
-        <Text pt="18px">{blog.subText}</Text>
-      </Flex>
-    </Flex>
+    <Container px="50px">
+      <SimpleGrid
+        columns={{ xs: 1, md: 2 }}
+        spacing={{ base: 8, md: 10 }}
+        py={{ xs: 18, md: 24 }}
+      >
+        <Flex>
+          <Image
+            id={blog.id}
+            src={blog.src}
+            alt={blog.altText}
+            width={425}
+            height={400}
+            placeholder="blur"
+            blurDataURL={blurDataURL()}
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+              objectFit: 'cover',
+              alignItems: 'center'
+            }}
+          />
+        </Flex>
+        <Stack spacing={{ xs: 6, md: 10 }}>
+          <Box as={'header'}>
+            <Heading size="large">{blog.productName}</Heading>
+            <Text variant="helper" py="10px">
+              {blog.helperText}
+            </Text>
+            <Rating rating={blog.rating} />
+            <Text pt="18px">{blog.subText}</Text>
+          </Box>
+
+          <Stack spacing={{ base: 4, sm: 6 }} direction={'column'}>
+            <Box>
+              <Text
+                fontSize={{ base: '16px', lg: '18px' }}
+                fontWeight={'500'}
+                textTransform={'uppercase'}
+                mb={'4'}
+              >
+                Features
+              </Text>
+            </Box>
+          </Stack>
+
+          <Button
+            rounded="none"
+            w="full"
+            mt="8px"
+            py="7"
+            textTransform="uppercase"
+            _hover={{
+              transform: 'translateY(2px)',
+              boxShadow: 'lg'
+            }}
+          >
+            Add to cart
+          </Button>
+        </Stack>
+      </SimpleGrid>
+    </Container>
   );
 };
 
