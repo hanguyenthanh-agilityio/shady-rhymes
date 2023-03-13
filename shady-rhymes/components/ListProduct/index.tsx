@@ -11,7 +11,8 @@ import {
   Heading,
   SimpleGrid,
   useDisclosure,
-  useToast
+  useToast,
+  Button
 } from '@chakra-ui/react';
 import ConfirmModal from '../ConfirmModal';
 
@@ -74,6 +75,7 @@ const ListProduct = ({ productItem }: ListProductProps) => {
       >
         Featured Product
       </Heading>
+      <Button>Add new product</Button>
       <SimpleGrid columns={{ xs: 1, md: 4 }} spacing={10} pt="20px">
         {productItem
           .slice(0, 4)
