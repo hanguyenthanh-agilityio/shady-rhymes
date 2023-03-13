@@ -6,12 +6,12 @@ import { Product } from '../../types/common';
 // Components
 import Card from '../Card';
 import {
-  Button,
   Container,
   Flex,
   Heading,
   SimpleGrid,
-  useDisclosure
+  useDisclosure,
+  useToast
 } from '@chakra-ui/react';
 import ConfirmModal from '../ConfirmModal';
 
@@ -20,6 +20,8 @@ interface ListProductProps {
 }
 
 const ListProduct = ({ productItem }: ListProductProps) => {
+  const toast = useToast();
+
   const {
     isOpen: isOpenDeleteModal,
     onOpen: onOpenDeleteModal,
@@ -29,7 +31,6 @@ const ListProduct = ({ productItem }: ListProductProps) => {
   const [blogId, setBlogId] = useState('');
 
   const onOpenModal = (id: string) => {
-    console.log(id);
     onOpenDeleteModal();
     setBlogId(id);
   };
@@ -47,8 +48,18 @@ const ListProduct = ({ productItem }: ListProductProps) => {
       );
       const data = await res.json();
       onCloseDeleteModal();
+      toast({
+        title: 'Item deleted.',
+        status: 'success',
+        duration: 3000,
+        isClosable: true
+      });
     } catch (err) {
-      console.log(err);
+      toast({
+        title: 'Delete failed.',
+        status: 'error',
+        isClosable: true
+      });
     }
   };
 
