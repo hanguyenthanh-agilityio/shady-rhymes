@@ -16,6 +16,12 @@ export const Input = {
         w: '360px',
         h: '60px'
       }
+    },
+    full: {
+      field: {
+        w: '100%',
+        h: '50px'
+      }
     }
   },
 

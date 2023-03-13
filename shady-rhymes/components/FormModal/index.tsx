@@ -10,7 +10,7 @@ import { Product } from '../../types/common';
 import Modal from '../Modal';
 import FormInput from '../FormInput';
 
-import { FormControl, FormLabel, Input, SimpleGrid } from '@chakra-ui/react';
+import { SimpleGrid } from '@chakra-ui/react';
 
 interface FormModalProps {
   modalTitle: string;
@@ -34,9 +34,7 @@ const FormModal = ({
     formState: { errors },
     handleSubmit,
     control
-  } = useForm<Product>({
-    defaultValues: productItem
-  });
+  } = useForm({ defaultValues: productItem });
 
   const onSubmit: SubmitHandler<Product> = data => onConfirm(data);
 
@@ -56,20 +54,21 @@ const FormModal = ({
           <FormInput
             label="Product name:"
             isInvalid={!!errors.productName}
-            inputName="name"
+            inputName="productName"
             register={register}
           />
-          {/* Status
-          <FormControl mb="15px" isInvalid={!!errors.status}>
-            <FormLabel>Status</FormLabel>
-            <Controller
-              name="status"
-              control={control}
-              render={({ field }) => (
-                <Select options={OPTION_STATUS} {...field} />
-              )}
-            /> 
-          </FormControl>*/}
+          <FormInput
+            label="Information:"
+            isInvalid={!!errors.helperText}
+            inputName="helperText"
+            register={register}
+          />
+          <FormInput
+            label="Price:"
+            isInvalid={!!errors.subText}
+            inputName="subText"
+            register={register}
+          />
         </SimpleGrid>
       </form>
     </Modal>

@@ -24,7 +24,11 @@ const FormInput = ({
   return (
     <FormControl mb="15px" isInvalid={isInvalid}>
       <FormLabel>{label}</FormLabel>
-      <Input size="full" {...register(inputName, { required: true })} />
+      <Input
+        size="full"
+        color="text.default"
+        {...register(inputName, { required: true })}
+      />
       <FormErrorMessage>
         {isInvalid && ERROR_MESSAGES.FIELD_REQUIRED}
       </FormErrorMessage>
