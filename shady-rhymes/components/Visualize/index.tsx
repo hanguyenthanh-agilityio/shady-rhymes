@@ -6,15 +6,24 @@ import { Container, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 const Visualize = () => {
   return (
     <Container my="80px">
-      <Flex
-        flexDir={{ xs: 'column', md: 'row' }}
+      <Stack
+        direction={{ xs: 'column-reverse', md: 'row' }}
         justifyContent="space-between"
       >
         <Stack>
-          <Heading size="large" fontWeight={500}>
+          <Heading
+            size={{ xs: 'small', md: 'large' }}
+            fontWeight={500}
+            pt={{ xs: '100px', md: '0' }}
+          >
             Visualize your ideas with us
           </Heading>
-          <Text size="medium" py="20px" pr="70px" maxW="806px">
+          <Text
+            size={{ xs: 'tiny', md: 'medium' }}
+            py={{ xs: '12px', md: '20px' }}
+            pr={{ xs: '0', md: '70px' }}
+            maxW={{ md: '806px' }}
+          >
             We are ready to help you build and also realize the room design that
             you dream of, with our experts and also the best category
             recommendations from us
@@ -29,7 +38,7 @@ const Visualize = () => {
             style={{ objectFit: 'cover' }}
           />
         </Flex>
-      </Flex>
+      </Stack>
     </Container>
   );
 };

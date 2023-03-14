@@ -99,9 +99,9 @@ const Home: NextPage<Props> = ({ blogs }) => {
       <Visualize />
       <Container>
         <Heading
-          size="large"
+          size={{ xs: 'small', md: 'large' }}
           fontWeight={500}
-          pt="50px"
+          pt={{ xs: '20px', md: '50px' }}
           pb="20px"
           textAlign="center"
         >

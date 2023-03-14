@@ -5,9 +5,24 @@ import { FEATURE, LEGAL, MEDIA, SUPPORT } from '../../constants/common';
 
 // Components
 import ListItem from '../ListItem';
-import { Box, Container, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  SimpleGrid,
+  Stack,
+  Text,
+  useBreakpointValue
+} from '@chakra-ui/react';
 
 const Footer = () => {
+  const width = useBreakpointValue({
+    xs: 124,
+    md: 228
+  });
+  const height = useBreakpointValue({
+    xs: 36,
+    md: 68
+  });
   return (
     <Box bgGradient="linear(275.58deg, #000000 0%, #4B4B4B 100%)">
       <Container>
@@ -18,14 +33,14 @@ const Footer = () => {
             lg: '2fr 1fr 1fr 1fr 1fr'
           }}
           spacing={8}
-          py="100px"
+          py={{ xs: '28px', md: '100px' }}
         >
-          <Stack maxW="228px" spacing={6}>
+          <Stack maxW={{ xs: '124px', md: '228px' }} spacing={6}>
             <Image
               src="/logo/footer.png"
               alt="footer-logo"
-              width={228}
-              height={68}
+              width={width}
+              height={height}
             />
           </Stack>
           <Stack align={'flex-start'}>
@@ -55,7 +70,7 @@ const Footer = () => {
         </SimpleGrid>
         <Text
           textAlign="center"
-          size="medium"
+          size={{ xs: 'tiny', md: 'medium' }}
           variant="default"
           pb="40px"
           pt={{ xs: '0', md: '80px' }}

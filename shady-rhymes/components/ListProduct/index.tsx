@@ -14,7 +14,7 @@ interface ListProductProps {
 
 const ListProduct = ({ products, onClick }: ListProductProps) => {
   return (
-    <SimpleGrid columns={{ xs: 1, md: 4 }} spacing={10} pt="20px">
+    <SimpleGrid columns={{ xs: 2, md: 4 }} spacing={10} pt="20px">
       {products.map(
         ({ id, src, altText, productName, helperText, subText, rating }) => (
           <Flex key={id} flexDir="column">

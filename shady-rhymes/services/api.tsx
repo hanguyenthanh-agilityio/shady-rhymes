@@ -11,7 +11,7 @@ export const handleAddProduct = async (product: Product) =>
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ ...product, src: '/' })
+    body: JSON.stringify({ ...product })
   });
 
 export const handleDelete = async (id?: string) =>

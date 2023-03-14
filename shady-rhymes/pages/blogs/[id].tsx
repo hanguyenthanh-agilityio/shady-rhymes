@@ -48,7 +48,9 @@ const Detail = ({ blog }: { blog: Product }) => {
           </Flex>
           <Stack spacing={{ xs: 6, md: 10 }}>
             <Box as={'header'}>
-              <Heading size="large">{blog.productName}</Heading>
+              <Heading size={{ xs: 'small', md: 'large' }}>
+                {blog.productName}
+              </Heading>
               <Text variant="helper" py="10px">
                 {blog.helperText}
               </Text>

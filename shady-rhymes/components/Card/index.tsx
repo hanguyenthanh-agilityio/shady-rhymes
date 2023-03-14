@@ -63,7 +63,7 @@ const Card = ({
           </a>
         </Link>
       </Box>
-      <Flex flexDir="column" pl="20px">
+      <Flex flexDir="column" pl={{ xs: '0', ms: '20px' }}>
         <Heading fontWeight={400} data-testid="product-name">
           {productName}
         </Heading>
