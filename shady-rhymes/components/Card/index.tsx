@@ -64,13 +64,17 @@ const Card = ({
         </Link>
       </Box>
       <Flex flexDir="column" pl="20px">
-        <Heading fontWeight={400}>{productName}</Heading>
+        <Heading fontWeight={400} data-testid="product-name">
+          {productName}
+        </Heading>
         <Text variant="helper" py="10px">
           {helperText}
         </Text>
         <Rating rating={rating} />
         <Text pt="18px">{subText}</Text>
-        <Button onClick={handleClick}>Delete</Button>
+        <Button onClick={handleClick} data-testid="card-input-field">
+          Delete
+        </Button>
       </Flex>
     </Flex>
   );
