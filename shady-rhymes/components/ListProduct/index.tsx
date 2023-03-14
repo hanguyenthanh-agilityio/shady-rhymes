@@ -1,21 +1,11 @@
-import { memo, useState } from 'react';
+import { memo } from 'react';
 
 // Types
 import { Product } from '../../types/common';
 
 // Components
 import Card from '../Card';
-import {
-  Container,
-  Flex,
-  Heading,
-  SimpleGrid,
-  useDisclosure,
-  useToast,
-  Button
-} from '@chakra-ui/react';
-import ConfirmModal from '../ConfirmModal';
-import FormModal from '../FormModal';
+import { Flex, SimpleGrid } from '@chakra-ui/react';
 
 interface ListProductProps {
   products: Product[];

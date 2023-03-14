@@ -9,7 +9,7 @@ import { Box, Container, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 
 const Footer = () => {
   return (
-    <Box bg="black">
+    <Box bgGradient="linear(275.58deg, #000000 0%, #4B4B4B 100%)">
       <Container>
         <SimpleGrid
           templateColumns={{

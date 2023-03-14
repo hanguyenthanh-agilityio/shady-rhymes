@@ -1,32 +1,40 @@
 import {
   Button,
   Container,
+  Flex,
   Heading,
   useDisclosure,
   useToast
 } from '@chakra-ui/react';
 import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import ConfirmModal from '../components/ConfirmModal';
-import Feature from '../components/Feature';
+import { Suspense, useState } from 'react';
+
 import Footer from '../components/Footer';
-import FormModal from '../components/FormModal';
 import Hero from '../components/Hero';
 import Introduce from '../components/Introduce';
 import ListProduct from '../components/ListProduct';
+import LoadingIndicator from '../components/LoadingIndicator';
 import Services from '../components/Services';
 import Visualize from '../components/Visualize';
 import { SERVICES } from '../constants/common';
 import { getProduct, handleAddProduct, handleDelete } from '../services/api';
 import { Product } from '../types/common';
 
+const FormModal = dynamic(() => import('../components/FormModal'));
+
+const ConfirmModal = dynamic(() => import('../components/ConfirmModal'));
+
 interface Props {
   blogs: Product[];
 }
 
 const Home: NextPage<Props> = ({ blogs }) => {
+  const toast = useToast();
+  const [blogId, setBlogId] = useState<string>();
   const [products, setProducts] = useState(blogs);
+
   const {
     isOpen: isOpenAddModal,
     onOpen: onOpenAddModal,
@@ -39,13 +47,10 @@ const Home: NextPage<Props> = ({ blogs }) => {
     onClose: onCloseDeleteModal
   } = useDisclosure();
 
-  const toast = useToast();
-  const [blogId, setBlogId] = useState<string>();
   const handleDeleteProduct = async () => {
     try {
       await handleDelete(blogId);
       const data = await getProduct();
-      console.log('data', data);
       setProducts(data);
 
       onCloseDeleteModal();
@@ -71,7 +76,6 @@ const Home: NextPage<Props> = ({ blogs }) => {
 
   const handleConfirm = async (data: Product) => {
     await handleAddProduct(data);
-    console.log('data', data);
     setProducts([...products, data]);
 
     onCloseAddModal();
@@ -103,30 +107,40 @@ const Home: NextPage<Props> = ({ blogs }) => {
         >
           Featured Product
         </Heading>
-        <Button onClick={onOpenAddModal}>Add new product</Button>
+        <Flex justifyContent="center">
+          <Button onClick={onOpenAddModal} my="10px">
+            Add new product
+          </Button>
+        </Flex>
         <ListProduct products={products} onClick={handleOpenDeleteModal} />
       </Container>
-
       <Services heading="What they say about our services" service={SERVICES} />
       <Footer />
-      {/*  */}
+      {/* Open add new product modal */}
+
       {isOpenAddModal && (
-        <FormModal
-          modalTitle="Add new product"
-          buttonLabel="Confirm"
-          onClose={onCloseAddModal}
-          onConfirm={handleConfirm}
-        />
+        <Suspense fallback={<LoadingIndicator />}>
+          <FormModal
+            modalTitle="Add new product"
+            buttonLabel="Confirm"
+            onClose={onCloseAddModal}
+            onConfirm={handleConfirm}
+          />
+        </Suspense>
       )}
 
+      {/* Open delete product modal */}
+
       {isOpenDeleteModal && (
-        <ConfirmModal
-          title="Are you sure you want to remove ?"
-          buttonLabel="Yes"
-          isOpen={isOpenDeleteModal}
-          onClose={onCloseDeleteModal}
-          onDelete={handleDeleteProduct}
-        />
+        <Suspense fallback={<LoadingIndicator />}>
+          <ConfirmModal
+            title="Are you sure you want to remove ?"
+            buttonLabel="Yes"
+            isOpen={isOpenDeleteModal}
+            onClose={onCloseDeleteModal}
+            onDelete={handleDeleteProduct}
+          />
+        </Suspense>
       )}
     </>
   );

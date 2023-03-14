@@ -39,7 +39,7 @@ export const SERVICES: Service[] = [
     title: 'Best planning service',
     text: 'I had fantastic experience at shady rhymes with pax planner, shady rhymes was so helpful and friendly and went above and beyond to help me configure my perfect walk in wardobe room.',
     avatarName: 'john',
-    avatarSrc: '/',
+    avatarSrc: 'https://bit.ly/dan-abramov',
     name: 'John Doe',
     intro: 'Project manager of cupalo'
   },
@@ -47,7 +47,7 @@ export const SERVICES: Service[] = [
     title: 'Best planning service',
     text: 'I had fantastic experience at shady rhymes with pax planner, shady rhymes was so helpful and friendly and went above and beyond to help me configure my perfect walk in wardobe room.',
     avatarName: 'john',
-    avatarSrc: '/',
+    avatarSrc: 'https://bit.ly/kent-c-dodds',
     name: 'John Doe',
     intro: 'Project manager of cupalo'
   },
@@ -55,7 +55,7 @@ export const SERVICES: Service[] = [
     title: 'Best planning service',
     text: 'I had fantastic experience at shady rhymes with pax planner, shady rhymes was so helpful and friendly and went above and beyond to help me configure my perfect walk in wardobe room.',
     avatarName: 'john',
-    avatarSrc: '/',
+    avatarSrc: 'https://bit.ly/code-beast',
     name: 'John Doe',
     intro: 'Project manager of cupalo'
   }

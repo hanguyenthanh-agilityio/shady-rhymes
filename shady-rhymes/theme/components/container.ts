@@ -6,8 +6,8 @@ export const Container = {
       maxW: {
         xs: '335px',
         md: '636px',
-        lg: '1750px'
-        // xl: '1220px',
+        lg: '1750px',
+        xl: '1300px'
         // xxl: '1700px'
       }
     }

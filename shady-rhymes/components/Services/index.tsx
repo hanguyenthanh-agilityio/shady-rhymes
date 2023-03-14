@@ -20,7 +20,11 @@ interface ServicesProps {
 
 const Services = ({ heading, service }: ServicesProps) => {
   return (
-    <Box bg="pink.100" minH="700px">
+    <Box
+      bgGradient="linear(279.85deg, #FFFFFF 0%, #FAF5F2 100%)"
+      minH="700px"
+      mt="150px"
+    >
       <Container>
         <Heading size="large" fontWeight={500} textAlign="center" py="80px">
           {heading}
@@ -30,7 +34,7 @@ const Services = ({ heading, service }: ServicesProps) => {
             ({ title, text, avatarName, avatarSrc, name, intro }, index) => (
               <Stack key={index}>
                 <Text size="large">{title}</Text>
-                <Text size="medium" maxH="144px">
+                <Text size="medium" maxH={{ xl: '180px', xxl: '144px' }}>
                   {text}
                 </Text>
                 <Flex pt="20px" alignItems="center">

@@ -50,6 +50,12 @@ const FormModal = ({
       <form>
         <SimpleGrid w="100%" columns={1}>
           <FormInput
+            label="Image:"
+            isInvalid={!!errors.src}
+            inputName="src"
+            register={register}
+          />
+          <FormInput
             label="Product name:"
             isInvalid={!!errors.productName}
             inputName="productName"
