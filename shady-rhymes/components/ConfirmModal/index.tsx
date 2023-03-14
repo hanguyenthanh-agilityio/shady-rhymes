@@ -22,7 +22,7 @@ const ConfirmModal = ({
   isLoading
 }: ConfirmModalProps) => (
   <Modal
-    modalTitle="Remove Appointment"
+    modalTitle="Remove Product"
     buttonAction={buttonLabel}
     ButtonClose="No"
     isOpen={isOpen}

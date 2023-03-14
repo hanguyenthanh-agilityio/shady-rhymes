@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 
 // Components
 import ErrorBoundary from '../components/ErrorBoundary';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, CSSReset } from '@chakra-ui/react';
 
 // Import the extendTheme function
 import CHAKRA_THEME_DEFAULT from '../theme/chakra';
@@ -19,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={CHAKRA_THEME_DEFAULT}>
         <ErrorBoundary>
+          <CSSReset />
           <Component {...pageProps} />
         </ErrorBoundary>
       </ChakraProvider>

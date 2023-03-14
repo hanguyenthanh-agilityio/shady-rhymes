@@ -11,9 +11,11 @@ import {
   Heading,
   SimpleGrid,
   useDisclosure,
-  useToast
+  useToast,
+  Button
 } from '@chakra-ui/react';
 import ConfirmModal from '../ConfirmModal';
+import FormModal from '../FormModal';
 
 interface ListProductProps {
   productItem: Product[];
@@ -23,16 +25,46 @@ const ListProduct = ({ productItem }: ListProductProps) => {
   const toast = useToast();
 
   const {
+    isOpen: isOpenAddModal,
+    onOpen: onOpenAddModal,
+    onClose: onCloseAddModal
+  } = useDisclosure();
+
+  const {
     isOpen: isOpenDeleteModal,
     onOpen: onOpenDeleteModal,
     onClose: onCloseDeleteModal
   } = useDisclosure();
 
   const [blogId, setBlogId] = useState('');
+  const [product, setProduct] = useState('');
 
   const onOpenModal = (id: string) => {
     onOpenDeleteModal();
     setBlogId(id);
+  };
+
+  const handleConfirm = async () => {
+    const res = await fetch(
+      'https://6405632440597b65de35cc7e.mockapi.io/blogs/',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ productItem })
+      }
+    );
+    const data = await res.json();
+    console.log(data);
+
+    onCloseAddModal();
+    toast({
+      title: 'Product created',
+      status: 'success',
+      duration: 3000,
+      isClosable: true
+    });
   };
 
   const handleDelete = async () => {
@@ -74,6 +106,15 @@ const ListProduct = ({ productItem }: ListProductProps) => {
       >
         Featured Product
       </Heading>
+      <Button onClick={onOpenAddModal}>Add new product</Button>
+      {isOpenAddModal && (
+        <FormModal
+          modalTitle="Add new product"
+          buttonLabel="Confirm"
+          onClose={onCloseAddModal}
+          onConfirm={handleConfirm}
+        />
+      )}
       <SimpleGrid columns={{ xs: 1, md: 4 }} spacing={10} pt="20px">
         {productItem
           .slice(0, 4)
