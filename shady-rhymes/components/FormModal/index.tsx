@@ -36,8 +36,6 @@ const FormModal = ({
     control
   } = useForm({ defaultValues: productItem });
 
-  const onSubmit: SubmitHandler<Product> = data => onConfirm(data);
-
   return (
     <Modal
       modalTitle={modalTitle}
@@ -45,7 +43,7 @@ const FormModal = ({
       ButtonClose="Cancel"
       isLoading={isLoading}
       isOpen={true}
-      onClick={handleSubmit(onSubmit)}
+      onClick={handleSubmit(onConfirm)}
       onClose={onClose}
       data-testid="modal"
     >

@@ -1,13 +1,24 @@
+import {
+  Button,
+  Container,
+  Heading,
+  useDisclosure,
+  useToast
+} from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import ConfirmModal from '../components/ConfirmModal';
 import Feature from '../components/Feature';
 import Footer from '../components/Footer';
+import FormModal from '../components/FormModal';
 import Hero from '../components/Hero';
 import Introduce from '../components/Introduce';
 import ListProduct from '../components/ListProduct';
 import Services from '../components/Services';
 import Visualize from '../components/Visualize';
 import { SERVICES } from '../constants/common';
+import { getProduct, handleAddProduct, handleDelete } from '../services/api';
 import { Product } from '../types/common';
 
 interface Props {
@@ -15,6 +26,63 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ blogs }) => {
+  const [products, setProducts] = useState(blogs);
+  const {
+    isOpen: isOpenAddModal,
+    onOpen: onOpenAddModal,
+    onClose: onCloseAddModal
+  } = useDisclosure();
+
+  const {
+    isOpen: isOpenDeleteModal,
+    onOpen: onOpenDeleteModal,
+    onClose: onCloseDeleteModal
+  } = useDisclosure();
+
+  const toast = useToast();
+  const [blogId, setBlogId] = useState<string>();
+  const handleDeleteProduct = async () => {
+    try {
+      await handleDelete(blogId);
+      const data = await getProduct();
+      console.log('data', data);
+      setProducts(data);
+
+      onCloseDeleteModal();
+      toast({
+        title: 'Item deleted.',
+        status: 'success',
+        duration: 3000,
+        isClosable: true
+      });
+    } catch (error) {
+      toast({
+        title: 'Delete failed.',
+        status: 'error',
+        isClosable: true
+      });
+    }
+  };
+
+  const handleOpenDeleteModal = (id: string) => {
+    setBlogId(id);
+    onOpenDeleteModal();
+  };
+
+  const handleConfirm = async (data: Product) => {
+    await handleAddProduct(data);
+    console.log('data', data);
+    setProducts([...products, data]);
+
+    onCloseAddModal();
+    toast({
+      title: 'Product created',
+      status: 'success',
+      duration: 3000,
+      isClosable: true
+    });
+  };
+
   return (
     <>
       <Head>
@@ -25,22 +93,55 @@ const Home: NextPage<Props> = ({ blogs }) => {
       <Hero />
       <Introduce />
       <Visualize />
-      <ListProduct productItem={blogs} />
+      <Container>
+        <Heading
+          size="large"
+          fontWeight={500}
+          pt="50px"
+          pb="20px"
+          textAlign="center"
+        >
+          Featured Product
+        </Heading>
+        <Button onClick={onOpenAddModal}>Add new product</Button>
+        <ListProduct products={products} onClick={handleOpenDeleteModal} />
+      </Container>
+
       <Services heading="What they say about our services" service={SERVICES} />
       <Footer />
+      {/*  */}
+      {isOpenAddModal && (
+        <FormModal
+          modalTitle="Add new product"
+          buttonLabel="Confirm"
+          onClose={onCloseAddModal}
+          onConfirm={handleConfirm}
+        />
+      )}
+
+      {isOpenDeleteModal && (
+        <ConfirmModal
+          title="Are you sure you want to remove ?"
+          buttonLabel="Yes"
+          isOpen={isOpenDeleteModal}
+          onClose={onCloseDeleteModal}
+          onDelete={handleDeleteProduct}
+        />
+      )}
     </>
   );
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch('https://6405632440597b65de35cc7e.mockapi.io/blogs');
-  const data = await res.json();
+  try {
+    const data = await getProduct();
 
-  return {
-    props: {
-      blogs: data
-    }
-  };
+    return {
+      props: {
+        blogs: data
+      }
+    };
+  } catch {}
 };
 
 export default Home;
