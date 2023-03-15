@@ -14,5 +14,5 @@ const TemplateListProduct: ComponentStory<typeof ListProduct> = args => (
 export const DefaultListProduct = TemplateListProduct.bind({});
 
 DefaultListProduct.args = {
-  productItem: PRODUCT
+  products: PRODUCT
 };
