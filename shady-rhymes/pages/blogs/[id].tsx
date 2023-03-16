@@ -91,10 +91,10 @@ const Detail = ({ blog }: { blog: Product }) => {
   );
 };
 
+const API_KEY = process.env.NEXT_PUBLIC_GAID || '';
+
 export const getStaticProps = async ({ params }: any) => {
-  const res = await fetch(
-    `https://6405632440597b65de35cc7e.mockapi.io/blogs/${params.id}`
-  );
+  const res = await fetch(`${API_KEY}${params.id}`);
   const data = await res.json();
 
   return {
@@ -105,7 +105,7 @@ export const getStaticProps = async ({ params }: any) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch('https://6405632440597b65de35cc7e.mockapi.io/blogs');
+  const res = await fetch(API_KEY);
   const data = await res.json();
 
   // Get the paths we want to pre-render based on blogs
