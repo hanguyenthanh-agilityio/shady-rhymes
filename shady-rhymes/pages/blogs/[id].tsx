@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 // Components
+import SEO from '@/theme/components/SEO';
 import Rating from '../../components/Rating';
 import {
   Box,
@@ -23,6 +24,10 @@ import Layout from '../../layouts/Layout/layout';
 const Detail = ({ blog }: { blog: Product }) => {
   return (
     <Layout>
+      <SEO
+        title="Shady Rhymes - Product detail"
+        description="Nextjs practice"
+      />
       <Container px="50px">
         <SimpleGrid
           columns={{ xs: 1, md: 2 }}
@@ -94,7 +99,7 @@ const Detail = ({ blog }: { blog: Product }) => {
 const API_KEY = process.env.NEXT_PUBLIC_GAID || '';
 
 export const getStaticProps = async ({ params }: any) => {
-  const res = await fetch(`${API_KEY}${params.id}`);
+  const res = await fetch(`${API_KEY}/${params.id}`);
   const data = await res.json();
 
   return {
