@@ -1,4 +1,22 @@
-import SEO from '@/theme/components/SEO';
+import dynamic from 'next/dynamic';
+import type { NextPage } from 'next';
+import { Suspense, useState } from 'react';
+
+// Services
+import { getProduct, handleAddProduct, handleDelete } from '@/services/api';
+
+// Constants
+import { SERVICES } from '@/constants/common';
+
+// Components
+import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
+import Hero from '@/components/Hero';
+import Introduce from '@/components/Introduce';
+import Visualize from '@/components/Visualize';
+import ListProduct from '@/components/ListProduct';
+import Services from '@/components/Services';
+import LoadingIndicator from '@/components/LoadingIndicator';
 import {
   Button,
   Container,
@@ -7,21 +25,9 @@ import {
   useDisclosure,
   useToast
 } from '@chakra-ui/react';
-import type { NextPage } from 'next';
-import dynamic from 'next/dynamic';
-import Head from 'next/head';
-import { Suspense, useState } from 'react';
 
-import Footer from '../components/Footer';
-import Hero from '../components/Hero';
-import Introduce from '../components/Introduce';
-import ListProduct from '../components/ListProduct';
-import LoadingIndicator from '../components/LoadingIndicator';
-import Services from '../components/Services';
-import Visualize from '../components/Visualize';
-import { SERVICES } from '../constants/common';
-import { getProduct, handleAddProduct, handleDelete } from '../services/api';
-import { Product } from '../types/common';
+// Types
+import { Product } from '@/types/common';
 
 const FormModal = dynamic(() => import('../components/FormModal'));
 

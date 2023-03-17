@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 // Components
-import SEO from '@/theme/components/SEO';
-import Rating from '../../components/Rating';
+import SEO from '@/components/SEO';
+import Rating from '@/components/Rating';
 import {
   Box,
   Button,
@@ -14,12 +14,14 @@ import {
   Text
 } from '@chakra-ui/react';
 
-// Types
-import { Product } from '../../types/common';
+// Layouts
+import Layout from '@/layouts/Layout';
 
 // Utils
-import { blurDataURL } from '../../utils/utils';
-import Layout from '../../layouts/Layout/layout';
+import { blurDataURL } from '@/utils/utils';
+
+// Types
+import { Product } from '@/types/common';
 
 const Detail = ({ blog }: { blog: Product }) => {
   return (
