@@ -1,7 +1,8 @@
 import Image from 'next/image';
 
 // Components
-import Rating from '../../components/Rating';
+import SEO from '@/components/SEO';
+import Rating from '@/components/Rating';
 import {
   Box,
   Button,
@@ -13,16 +14,22 @@ import {
   Text
 } from '@chakra-ui/react';
 
-// Types
-import { Product } from '../../types/common';
+// Layouts
+import Layout from '@/layouts/Layout';
 
 // Utils
-import { blurDataURL } from '../../utils/utils';
-import Layout from '../../layouts/Layout/layout';
+import { blurDataURL } from '@/utils/utils';
+
+// Types
+import { Product } from '@/types/common';
 
 const Detail = ({ blog }: { blog: Product }) => {
   return (
     <Layout>
+      <SEO
+        title="Shady Rhymes - Product detail"
+        description="Nextjs practice"
+      />
       <Container px="50px">
         <SimpleGrid
           columns={{ xs: 1, md: 2 }}
@@ -94,7 +101,7 @@ const Detail = ({ blog }: { blog: Product }) => {
 const API_KEY = process.env.NEXT_PUBLIC_GAID || '';
 
 export const getStaticProps = async ({ params }: any) => {
-  const res = await fetch(`${API_KEY}${params.id}`);
+  const res = await fetch(`${API_KEY}/${params.id}`);
   const data = await res.json();
 
   return {
