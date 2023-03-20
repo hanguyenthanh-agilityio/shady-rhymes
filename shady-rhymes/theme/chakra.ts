@@ -1,8 +1,13 @@
+// Components
+import * as components from './components';
 import { extendTheme } from '@chakra-ui/react';
-import colors from './color';
+import { breakpoints } from './breakpoints';
+import colors from './colors';
 
 const overrides = {
-  colors
+  components: { ...components },
+  colors,
+  breakpoints
 };
 
 const CHAKRA_THEME_DEFAULT = extendTheme(overrides);
