@@ -5,47 +5,35 @@ import { Product } from '../../types/common';
 
 // Components
 import Card from '../Card';
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
+import { Flex, SimpleGrid } from '@chakra-ui/react';
 
 interface ListProductProps {
-  productItem: Product[];
+  products: Product[];
+  onClick: (id: string) => void;
 }
 
-const ListProduct = ({ productItem }: ListProductProps) => {
+const ListProduct = ({ products, onClick }: ListProductProps) => {
   return (
-    <Container>
-      <Heading
-        size="large"
-        fontWeight={500}
-        pt="50px"
-        pb="20px"
-        textAlign="center"
-      >
-        Featured Product
-      </Heading>
-      <SimpleGrid columns={{ xs: 1, md: 4 }} spacing={10} pt="20px">
-        {productItem
-          .slice(0, 4)
-          .map(
-            (
-              { src, altText, productName, helperText, subText, rating },
-              index
-            ) => (
-              <Card
-                key={index}
-                src={src}
-                altText={altText}
-                width={400}
-                height={425}
-                productName={productName}
-                helperText={helperText}
-                subText={subText}
-                rating={rating}
-              />
-            )
-          )}
-      </SimpleGrid>
-    </Container>
+    <SimpleGrid columns={{ xs: 2, md: 4 }} spacing={10} pt="20px">
+      {products.map(
+        ({ id, src, altText, productName, helperText, subText, rating }) => (
+          <Flex key={id} flexDir="column">
+            <Card
+              src={src}
+              altText={altText}
+              width={400}
+              height={425}
+              productName={productName}
+              helperText={helperText}
+              subText={subText}
+              rating={rating}
+              id={id}
+              onClick={onClick}
+            />
+          </Flex>
+        )
+      )}
+    </SimpleGrid>
   );
 };
 

@@ -4,10 +4,10 @@ export const Container = {
   sizes: {
     default: {
       maxW: {
-        xs: '335px',
+        xs: '400px',
         md: '636px',
-        lg: '1750px'
-        // xl: '1220px',
+        lg: '1750px',
+        xl: '1300px'
         // xxl: '1700px'
       }
     }

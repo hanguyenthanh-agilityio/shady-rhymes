@@ -13,18 +13,16 @@ interface ListItemProps {
 const ListItem = ({ item }: ListItemProps) => {
   return (
     <List>
-      {item.map(({ label }, index) => (
-        <>
-          <ListItemChakra
-            key={index}
-            color="text.reversal"
-            fontSize={{ xs: '12px', md: '18px' }}
-            lineHeight={{ xs: '18px', md: '27px' }}
-            pb="24px"
-          >
-            <Link href="/">{label}</Link>
-          </ListItemChakra>
-        </>
+      {item.map(({ label }) => (
+        <ListItemChakra
+          key={label}
+          color="text.reversal"
+          fontSize={{ xs: '12px', md: '18px' }}
+          lineHeight={{ xs: '18px', md: '27px' }}
+          pb="24px"
+        >
+          <Link href="/">{label}</Link>
+        </ListItemChakra>
       ))}
     </List>
   );

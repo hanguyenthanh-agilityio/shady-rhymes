@@ -7,7 +7,7 @@ export const Text = {
   sizes: {
     tiny: {
       fontSize: '12px',
-      lineHeight: '18px'
+      lineHeight: '20px'
     },
     small: {
       fontSize: '14px',
