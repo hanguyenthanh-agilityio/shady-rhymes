@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Container, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 
 // Utils
-import { blurDataURL } from '@/utils/utils';
+import { blurDataURL } from '../../utils/utils';
 
 const Visualize = () => {
   return (

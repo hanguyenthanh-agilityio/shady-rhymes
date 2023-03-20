@@ -1,3 +1,5 @@
+import { UseFormRegister } from 'react-hook-form';
+
 import {
   FormControl,
   FormErrorMessage,
@@ -5,7 +7,8 @@ import {
   Input
 } from '@chakra-ui/react';
 import { memo } from 'react';
-import { UseFormRegister } from 'react-hook-form';
+
+// Constants
 import { ERROR_MESSAGES } from '../../constants/messages';
 
 interface FormInputProps {

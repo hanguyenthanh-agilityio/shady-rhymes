@@ -3,7 +3,15 @@ module.exports = {
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
-    '!component/**/__test__/__snapshots__/*.test.{js,ts,tsx}.snap'
+    '!**/.storybook/**',
+    '!**/.next/**',
+    '!components/**/__test__/__snapshots__/*.test.{js,ts,tsx}.snap',
+    '!components/**/*.stories.{js,ts,tsx}',
+    '!<rootDir>/theme/**',
+    '!<rootDir>/utils/**',
+    '!<rootDir>/coverage/**',
+    '!<rootDir>/constants/**',
+    '!<rootDir>/types/**'
   ],
   moduleNameMapper: {
     '/^(.*)$/': '<rootDir>/__test__',

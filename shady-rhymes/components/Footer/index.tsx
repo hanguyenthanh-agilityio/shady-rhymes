@@ -8,7 +8,7 @@ import ListItem from '../ListItem';
 import { Box, Container, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 
 //Utils
-import { blurDataURL } from '@/utils/utils';
+import { blurDataURL } from '../../utils/utils';
 
 const Footer = () => {
   return (

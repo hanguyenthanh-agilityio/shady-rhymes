@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Box, Flex, Text } from '@chakra-ui/react';
 
 // Utils
-import { blurDataURL } from '@/utils/utils';
+import { blurDataURL } from '../../utils/utils';
 
 interface FeatureProps {
   iconImage?: string;

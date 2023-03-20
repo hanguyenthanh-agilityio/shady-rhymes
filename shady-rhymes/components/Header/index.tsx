@@ -1,6 +1,6 @@
 // Components
-import { Flex, VStack, Stack, Text, Heading } from '@chakra-ui/react';
 import SearchInput from '../SearchInput';
+import { Flex, VStack, Stack, Text, Heading } from '@chakra-ui/react';
 
 const Hero = () => {
   return (
