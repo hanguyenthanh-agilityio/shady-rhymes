@@ -77,9 +77,18 @@ const Card = ({
             );
           })}
         </Flex>
-        <Flex justifyContent="space-between" alignItems="center" pt="18px">
+        <Flex
+          flexDir={{ xs: 'column', md: 'row' }}
+          justifyContent={{ xs: 'flex-start', md: 'space-between' }}
+          alignItems={{ xs: 'flex-start', md: 'center' }}
+          pt="18px"
+        >
           <Text>{price}</Text>
-          <Button onClick={handleClick} data-testid="card-input-field">
+          <Button
+            onClick={handleClick}
+            data-testid="card-input-field"
+            mt={{ xs: '10px', md: '0' }}
+          >
             Delete
           </Button>
         </Flex>

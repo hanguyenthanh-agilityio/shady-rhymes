@@ -11,7 +11,7 @@ import { SERVICES } from '@/constants/common';
 // Components
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
-import Hero from '@/components/Hero';
+import Hero from '@/components/Header';
 import Introduce from '@/components/Introduce';
 import Visualize from '@/components/Visualize';
 import ListProduct from '@/components/ListProduct';

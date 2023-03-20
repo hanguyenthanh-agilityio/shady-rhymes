@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react';
 import { memo } from 'react';
 import { UseFormRegister } from 'react-hook-form';
-import { ERROR_MESSAGES } from '../../constants/error-messages';
+import { ERROR_MESSAGES } from '../../constants/messages';
 
 interface FormInputProps {
   isInvalid: boolean;

@@ -1,6 +1,11 @@
-import { Box, Flex, Text, useBreakpointValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+// Components
+import { Box, Flex, Text } from '@chakra-ui/react';
+
+// Utils
+import { blurDataURL } from '@/utils/utils';
 
 interface FeatureProps {
   iconImage?: string;
@@ -10,15 +15,6 @@ interface FeatureProps {
 }
 
 const Feature = ({ iconImage, title, text, subText }: FeatureProps) => {
-  const width = useBreakpointValue({
-    xs: 28,
-    md: 60
-  });
-  const height = useBreakpointValue({
-    xs: 28,
-    md: 60
-  });
-
   return (
     <Flex
       flexDir="column"
@@ -29,7 +25,15 @@ const Feature = ({ iconImage, title, text, subText }: FeatureProps) => {
       pb={{ xs: '26px', md: '0' }}
     >
       {iconImage && (
-        <Image src={iconImage} alt="icon" width={width} height={height} />
+        <Image
+          src={iconImage}
+          alt="icon"
+          width={60}
+          height={60}
+          sizes="(max-width: 768px) 28px"
+          placeholder="blur"
+          blurDataURL={blurDataURL()}
+        />
       )}
       <Text
         size={{ xs: 'tiny', md: 'large' }}

@@ -7,6 +7,7 @@ const Hero = () => {
     <Flex
       w="full"
       h="1000px"
+      maxH={{ xs: '550px', lg: '1000px' }}
       backgroundImage="url(/images/hero.png)"
       backgroundSize="cover"
       backgroundPosition="center center"
@@ -20,7 +21,7 @@ const Hero = () => {
           <Heading
             size={{ xs: 'medium', md: 'huge' }}
             textAlign="center"
-            maxW="800px"
+            maxW={{ xs: '300px', md: '800px' }}
             color="#fff"
           >
             Make your interior more minimaistic & modern
@@ -29,7 +30,7 @@ const Hero = () => {
             size={{ xs: 'tiny', md: 'medium' }}
             textAlign="center"
             color="#fff"
-            maxW="500px"
+            maxW={{ xs: '260px', md: '500px' }}
           >
             Bringing interiors to life, understanding the person of people
             living in a home is far greater need in design.

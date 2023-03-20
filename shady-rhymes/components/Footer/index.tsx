@@ -5,24 +5,12 @@ import { FEATURE, LEGAL, MEDIA, SUPPORT } from '../../constants/common';
 
 // Components
 import ListItem from '../ListItem';
-import {
-  Box,
-  Container,
-  SimpleGrid,
-  Stack,
-  Text,
-  useBreakpointValue
-} from '@chakra-ui/react';
+import { Box, Container, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+
+//Utils
+import { blurDataURL } from '@/utils/utils';
 
 const Footer = () => {
-  const width = useBreakpointValue({
-    xs: 124,
-    md: 228
-  });
-  const height = useBreakpointValue({
-    xs: 36,
-    md: 68
-  });
   return (
     <Box bgGradient="linear(275.58deg, #000000 0%, #4B4B4B 100%)">
       <Container>
@@ -39,8 +27,11 @@ const Footer = () => {
             <Image
               src="/logo/footer.png"
               alt="footer-logo"
-              width={width}
-              height={height}
+              width={228}
+              height={228}
+              sizes="(max-width: 768px) 124px"
+              placeholder="blur"
+              blurDataURL={blurDataURL()}
             />
           </Stack>
           <Stack align={'flex-start'}>
