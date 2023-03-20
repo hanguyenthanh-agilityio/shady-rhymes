@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 // Components
 import SEO from '@/components/SEO';
-import Rating from '@/components/Rating';
+import { BsStarFill } from 'react-icons/bs';
 import {
   Box,
   Button,
@@ -61,8 +61,18 @@ const Detail = ({ blog }: { blog: Product }) => {
               <Text variant="helper" py="10px">
                 {blog.helperText}
               </Text>
-              <Rating rating={blog.rating} />
-              <Text pt="18px">{blog.subText}</Text>
+              <Flex>
+                {[...Array(5)].map((_, index) => {
+                  return (
+                    <BsStarFill
+                      key={index}
+                      style={{ marginLeft: '4' }}
+                      color="#dfb300"
+                    />
+                  );
+                })}
+              </Flex>
+              <Text pt="18px">{blog.price}</Text>
             </Box>
 
             <Stack spacing={{ base: 4, sm: 6 }} direction={'column'}>

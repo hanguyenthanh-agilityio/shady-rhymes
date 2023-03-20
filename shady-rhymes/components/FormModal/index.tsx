@@ -69,8 +69,8 @@ const FormModal = ({
           />
           <FormInput
             label="Price:"
-            isInvalid={!!errors.subText}
-            inputName="subText"
+            isInvalid={!!errors.price}
+            inputName="price"
             register={register}
           />
         </SimpleGrid>

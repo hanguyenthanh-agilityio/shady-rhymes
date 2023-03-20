@@ -21,6 +21,5 @@ export type Product = {
   altText?: string;
   productName: string;
   helperText: string;
-  subText: string;
-  rating: number;
+  price: string;
 };

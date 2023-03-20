@@ -1,13 +1,13 @@
 import { memo } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Utils
 import { blurDataURL } from '../../utils/utils';
 
 // Components
-import Rating from '../Rating';
+import { BsStarFill } from 'react-icons/bs';
 import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react';
-import Link from 'next/link';
 
 interface CardProps {
   src: string;
@@ -16,8 +16,7 @@ interface CardProps {
   height?: number;
   productName: string;
   helperText: string;
-  subText: string;
-  rating: number;
+  price: string;
   id: string;
   onClick: (id: string) => void;
 }
@@ -29,8 +28,7 @@ const Card = ({
   height,
   productName,
   helperText,
-  subText,
-  rating,
+  price,
   id,
   onClick
 }: CardProps) => {
@@ -47,20 +45,18 @@ const Card = ({
             query: { id: id }
           }}
         >
-          <a>
-            <Image
-              src={src}
-              alt={altText}
-              width={width}
-              height={height}
-              placeholder="blur"
-              blurDataURL={blurDataURL()}
-              style={{
-                maxWidth: '100%',
-                height: 'auto'
-              }}
-            />
-          </a>
+          <Image
+            src={src}
+            alt={altText}
+            width={width}
+            height={height}
+            placeholder="blur"
+            blurDataURL={blurDataURL()}
+            style={{
+              maxWidth: '100%',
+              height: 'auto'
+            }}
+          />
         </Link>
       </Box>
       <Flex flexDir="column" pl={{ xs: '0', ms: '20px' }}>
@@ -70,11 +66,23 @@ const Card = ({
         <Text variant="helper" py="10px">
           {helperText}
         </Text>
-        <Rating rating={rating} />
-        <Text pt="18px">{subText}</Text>
-        <Button onClick={handleClick} data-testid="card-input-field">
-          Delete
-        </Button>
+        <Flex>
+          {[...Array(5)].map((_, index) => {
+            return (
+              <BsStarFill
+                key={index}
+                style={{ marginRight: '4', width: '16px', height: '16px' }}
+                color="#dfb300"
+              />
+            );
+          })}
+        </Flex>
+        <Flex justifyContent="space-between" alignItems="center" pt="18px">
+          <Text>{price}</Text>
+          <Button onClick={handleClick} data-testid="card-input-field">
+            Delete
+          </Button>
+        </Flex>
       </Flex>
     </Flex>
   );

@@ -11,7 +11,7 @@ describe('Card component', () => {
     height: 425,
     productName: 'Product',
     helperText: 'Category',
-    subText: 'IDR 150000',
+    price: 'IDR 150000',
     rating: 3,
     id: '1',
     onClick: jest.fn()
