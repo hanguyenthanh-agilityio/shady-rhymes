@@ -8,6 +8,8 @@ module.exports = {
     '!components/**/__test__/__snapshots__/*.test.{js,ts,tsx}.snap',
     '!components/**/*.stories.{js,ts,tsx}',
     '!layouts/**/*.stories.{js,ts,tsx}',
+    '!pages/api/*.{js,ts,tsx}',
+    '!pages/_app.{js,ts,tsx}',
     '!<rootDir>/theme/**',
     '!<rootDir>/utils/**',
     '!<rootDir>/coverage/**',
@@ -16,6 +18,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     '/^(.*)$/': '<rootDir>/__test__',
+    '^@/(.*)$': '<rootDir>/$1',
     '/^components/(.*)$/': '<rootDir>/components/$1',
     '/^layouts/(.*)$/': '<rootDir>/layouts/$1',
 
