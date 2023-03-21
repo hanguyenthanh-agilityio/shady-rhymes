@@ -58,7 +58,9 @@ const Feature = ({ iconImage, title, text, subText }: FeatureProps) => {
           fontSize={{ xs: '12px', md: '18px' }}
           lineHeight={{ xs: '24px', md: '36px' }}
         >
-          <Link href="/">{subText}</Link>
+          <Link href="/">
+            <a>{subText}</a>
+          </Link>
         </Box>
       )}
     </Flex>

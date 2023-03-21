@@ -45,18 +45,20 @@ const Card = ({
             query: { id: id }
           }}
         >
-          <Image
-            src={src}
-            alt={altText}
-            width={width}
-            height={height}
-            placeholder="blur"
-            blurDataURL={blurDataURL()}
-            style={{
-              maxWidth: '100%',
-              height: 'auto'
-            }}
-          />
+          <a>
+            <Image
+              src={src}
+              alt={altText}
+              width={width}
+              height={height}
+              placeholder="blur"
+              blurDataURL={blurDataURL()}
+              style={{
+                maxWidth: '100%',
+                height: 'auto'
+              }}
+            />
+          </a>
         </Link>
       </Box>
       <Flex flexDir="column" pl={{ xs: '0', ms: '20px' }}>

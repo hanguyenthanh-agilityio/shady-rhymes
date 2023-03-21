@@ -15,7 +15,7 @@ const Hero = () => {
       <VStack
         w="100%"
         justify="center"
-        bgGradient="linear(to-r, blackAlpha.600, transparent)"
+        // bgGradient="linear(to-r, blackAlpha.600, transparent)"
       >
         <Stack align="center">
           <Heading

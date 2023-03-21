@@ -15,7 +15,7 @@ import Hero from '@/components/Header';
 import Introduce from '@/components/Introduce';
 import Visualize from '@/components/Visualize';
 import ListProduct from '@/components/ListProduct';
-import Services from '@/components/Services';
+import About from '@/components/About';
 import LoadingIndicator from '@/components/LoadingIndicator';
 import {
   Button,
@@ -117,7 +117,7 @@ const Home: NextPage<Props> = ({ blogs }) => {
         </Flex>
         <ListProduct products={products} onClick={handleOpenDeleteModal} />
       </Container>
-      <Services heading="What they say about our services" service={SERVICES} />
+      <About heading="What they say about our services" service={SERVICES} />
       <Footer />
       {/* Open add new product modal */}
 

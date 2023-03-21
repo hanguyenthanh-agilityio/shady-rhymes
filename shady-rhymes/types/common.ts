@@ -2,8 +2,9 @@ export type NavItem = {
   label: string;
 };
 
-export type ListItem = {
-  label: string;
+export type ListItems = {
+  title: string;
+  label: string[];
 };
 
 export type Service = {
