@@ -3,6 +3,9 @@ import Image from 'next/image';
 // Components
 import { Container, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 
+// Utils
+import { blurDataURL } from '../../utils/utils';
+
 const Visualize = () => {
   return (
     <Container my="80px">
@@ -36,6 +39,8 @@ const Visualize = () => {
             width={900}
             height={600}
             style={{ objectFit: 'cover' }}
+            placeholder="blur"
+            blurDataURL={blurDataURL()}
           />
         </Flex>
       </Stack>

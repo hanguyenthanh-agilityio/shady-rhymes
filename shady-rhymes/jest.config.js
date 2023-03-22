@@ -3,17 +3,30 @@ module.exports = {
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
-    '!component/**/__test__/__snapshots__/*.test.{js,ts,tsx}.snap'
+    '!**/.storybook/**',
+    '!**/.next/**',
+    '!components/**/__test__/__snapshots__/*.test.{js,ts,tsx}.snap',
+    '!components/**/*.stories.{js,ts,tsx}',
+    '!layouts/**/*.stories.{js,ts,tsx}',
+    '!pages/api/*.{js,ts,tsx}',
+    '!pages/_app.{js,ts,tsx}',
+    '!<rootDir>/theme/**',
+    '!<rootDir>/utils/**',
+    '!<rootDir>/coverage/**',
+    '!<rootDir>/constants/**',
+    '!<rootDir>/types/**'
   ],
   moduleNameMapper: {
     '/^(.*)$/': '<rootDir>/__test__',
-    '/../components/(.*)': '<rootDiv>/components/$1',
+    '^@/(.*)$': '<rootDir>/$1',
+    '/^components/(.*)$/': '<rootDir>/components/$1',
+    '/^layouts/(.*)$/': '<rootDir>/layouts/$1',
 
     /* Handle CSS imports (with CSS modules)
     https://jestjs.io/docs/webpack#mocking-css-modules */
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
 
-    // Handle CSS imports (without CSS modules)
+    // Handle CSS imports (without CSSmodules)
     '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
 
     /* Handle image imports

@@ -2,8 +2,9 @@ export type NavItem = {
   label: string;
 };
 
-export type ListItem = {
-  label: string;
+export type ListItems = {
+  title: string;
+  label: string[];
 };
 
 export type Service = {
@@ -21,6 +22,5 @@ export type Product = {
   altText?: string;
   productName: string;
   helperText: string;
-  subText: string;
-  rating: number;
+  price: string;
 };

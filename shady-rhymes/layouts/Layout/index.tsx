@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 
 // Components
-import { Text } from '@chakra-ui/react';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 interface LayoutProp {
   children: ReactNode;
@@ -10,9 +11,9 @@ interface LayoutProp {
 const Layout = ({ children }: LayoutProp) => {
   return (
     <>
-      <Text>Header</Text>
+      <Header />
       {children}
-      <Text>Footer</Text>
+      <Footer />
     </>
   );
 };

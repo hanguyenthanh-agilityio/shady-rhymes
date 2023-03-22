@@ -1,36 +1,25 @@
 import Image from 'next/image';
 
 // Constants
-import { FEATURE, LEGAL, MEDIA, SUPPORT } from '../../constants/common';
+import { FEATURE } from '../../constants/common';
 
 // Components
-import ListItem from '../ListItem';
-import {
-  Box,
-  Container,
-  SimpleGrid,
-  Stack,
-  Text,
-  useBreakpointValue
-} from '@chakra-ui/react';
+import ListFeature from '../../components/ListFeature';
+import { Box, Container, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+
+//Utils
+import { blurDataURL } from '../../utils/utils';
 
 const Footer = () => {
-  const width = useBreakpointValue({
-    xs: 124,
-    md: 228
-  });
-  const height = useBreakpointValue({
-    xs: 36,
-    md: 68
-  });
   return (
-    <Box bgGradient="linear(275.58deg, #000000 0%, #4B4B4B 100%)">
+    // bgGradient="linear(275.58deg, #000000 0%, #4B4B4B 100%)"
+    <Box bg="#000">
       <Container>
         <SimpleGrid
           templateColumns={{
             xs: '1fr',
             md: '1fr 1fr',
-            lg: '2fr 1fr 1fr 1fr 1fr'
+            lg: '1fr 2fr'
           }}
           spacing={8}
           py={{ xs: '28px', md: '100px' }}
@@ -39,33 +28,20 @@ const Footer = () => {
             <Image
               src="/logo/footer.png"
               alt="footer-logo"
-              width={width}
-              height={height}
+              width={228}
+              height={68}
+              sizes="(max-width: 768px) 124px"
+              placeholder="blur"
+              blurDataURL={blurDataURL()}
             />
           </Stack>
-          <Stack align={'flex-start'}>
-            <Text size={{ xs: 'small', md: 'large' }} variant="footer">
-              Features
-            </Text>
-            <ListItem item={FEATURE} />
-          </Stack>
-          <Stack align={'flex-start'}>
-            <Text size={{ xs: 'small', md: 'large' }} variant="footer">
-              Support
-            </Text>
-            <ListItem item={SUPPORT} />
-          </Stack>
-          <Stack align={'flex-start'}>
-            <Text size={{ xs: 'small', md: 'large' }} variant="footer">
-              Legal
-            </Text>
-            <ListItem item={LEGAL} />
-          </Stack>
-          <Stack align={'flex-start'}>
-            <Text size={{ xs: 'small', md: 'large' }} variant="footer">
-              Social Media
-            </Text>
-            <ListItem item={MEDIA} />
+          <Stack
+            className="1231134"
+            display="flex"
+            flexDir={{ xs: 'column', md: 'row' }}
+            align={'flex-start'}
+          >
+            <ListFeature item={FEATURE} />
           </Stack>
         </SimpleGrid>
         <Text

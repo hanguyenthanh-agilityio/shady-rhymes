@@ -20,7 +20,9 @@ const Navbar = ({ navItem }: NavbarProps) => {
     >
       {navItem.map(({ label }, index) => (
         <Box key={`label-${index}`}>
-          <Link href="/">{label}</Link>
+          <Link href="/">
+            <a>{label}</a>
+          </Link>
         </Box>
       ))}
     </Stack>

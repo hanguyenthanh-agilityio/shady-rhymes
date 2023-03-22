@@ -13,15 +13,15 @@ import {
 // Types
 import { Service } from '../../types/common';
 
-interface ServicesProps {
+interface AboutProps {
   heading: string;
   service: Service[];
 }
 
-const Services = ({ heading, service }: ServicesProps) => {
+const About = ({ heading, service }: AboutProps) => {
   return (
     <Box
-      bgGradient="linear(279.85deg, #FFFFFF 0%, #FAF5F2 100%)"
+      // bgGradient="linear(279.85deg, #FFFFFF 0%, #FAF5F2 100%)"
       minH="700px"
       mt="150px"
     >
@@ -73,4 +73,4 @@ const Services = ({ heading, service }: ServicesProps) => {
   );
 };
 
-export default Services;
+export default About;

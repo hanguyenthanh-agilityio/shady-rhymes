@@ -1,4 +1,5 @@
-import { ListItem, NavItem, Product, Service } from '../types/common';
+import { title } from 'process';
+import { ListItems, NavItem, Product, Service } from '../types/common';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Furniture' },
@@ -61,29 +62,26 @@ export const SERVICES: Service[] = [
   }
 ];
 
-export const FEATURE: ListItem[] = [
-  { label: 'Our Features' },
-  { label: 'Pricing' },
-  { label: 'Affiliate Program' },
-  { label: 'Press Kit' }
-];
+export const FEATURE: ListItems[] = [
+  {
+    title: 'Feature',
+    label: ['Our Features', 'Pricing', 'Affiliate Program', 'Press Kit']
+  },
 
-export const SUPPORT: ListItem[] = [
-  { label: 'Account' },
-  { label: 'Help' },
-  { label: 'Contact Us' }
-];
+  {
+    title: 'Support',
+    label: ['Account', 'Help', 'Contact Us']
+  },
 
-export const LEGAL: ListItem[] = [
-  { label: 'Privacy Policy' },
-  { label: 'Terms of  Use' }
-];
+  {
+    title: 'Legal',
+    label: ['Privacy Policy', 'Terms of  Use']
+  },
 
-export const MEDIA: ListItem[] = [
-  { label: 'Twitter' },
-  { label: 'Product Hunt' },
-  { label: 'Instagram' },
-  { label: 'Github' }
+  {
+    title: 'Media',
+    label: ['Twitter', 'Product Hunt', 'Instagram', 'Github']
+  }
 ];
 
 export const PRODUCT: Product[] = [

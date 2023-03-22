@@ -8,7 +8,9 @@ const colors = {
     30: '#edf2f7'
   },
 
-  background: {},
+  background: {
+    default: '#fff'
+  },
 
   heading: {
     default: '#564e4e'

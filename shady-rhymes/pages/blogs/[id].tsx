@@ -1,7 +1,8 @@
 import Image from 'next/image';
 
 // Components
-import Rating from '../../components/Rating';
+import SEO from '@/components/SEO';
+import { BsStarFill } from 'react-icons/bs';
 import {
   Box,
   Button,
@@ -13,16 +14,22 @@ import {
   Text
 } from '@chakra-ui/react';
 
-// Types
-import { Product } from '../../types/common';
+// Layouts
+import Layout from '@/layouts/Layout';
 
 // Utils
-import { blurDataURL } from '../../utils/utils';
-import Layout from '../../layouts/Layout/layout';
+import { blurDataURL } from '@/utils/utils';
+
+// Types
+import { Product } from '@/types/common';
 
 const Detail = ({ blog }: { blog: Product }) => {
   return (
     <Layout>
+      <SEO
+        title="Shady Rhymes - Product detail"
+        description="Nextjs practice"
+      />
       <Container px="50px">
         <SimpleGrid
           columns={{ xs: 1, md: 2 }}
@@ -54,8 +61,18 @@ const Detail = ({ blog }: { blog: Product }) => {
               <Text variant="helper" py="10px">
                 {blog.helperText}
               </Text>
-              <Rating rating={blog.rating} />
-              <Text pt="18px">{blog.subText}</Text>
+              <Flex>
+                {[...Array(5)].map((_, index) => {
+                  return (
+                    <BsStarFill
+                      key={index}
+                      style={{ marginLeft: '4' }}
+                      color="#dfb300"
+                    />
+                  );
+                })}
+              </Flex>
+              <Text pt="18px">{blog.price}</Text>
             </Box>
 
             <Stack spacing={{ base: 4, sm: 6 }} direction={'column'}>
@@ -91,10 +108,10 @@ const Detail = ({ blog }: { blog: Product }) => {
   );
 };
 
+const API_KEY = process.env.NEXT_PUBLIC_GAID || '';
+
 export const getStaticProps = async ({ params }: any) => {
-  const res = await fetch(
-    `https://6405632440597b65de35cc7e.mockapi.io/blogs/${params.id}`
-  );
+  const res = await fetch(`${API_KEY}/${params.id}`);
   const data = await res.json();
 
   return {
@@ -105,7 +122,7 @@ export const getStaticProps = async ({ params }: any) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch('https://6405632440597b65de35cc7e.mockapi.io/blogs');
+  const res = await fetch(API_KEY);
   const data = await res.json();
 
   // Get the paths we want to pre-render based on blogs

@@ -5,8 +5,11 @@ import '@testing-library/jest-dom';
 import { PRODUCT } from '../../../constants/common';
 
 describe('ListProduce component', () => {
+  const props = {
+    onClick: jest.fn()
+  };
   it('Should render ListProduce snapshot correctly', () => {
-    const listProduce = render(<ListProduce productItem={PRODUCT} />);
+    const listProduce = render(<ListProduce products={PRODUCT} {...props} />);
 
     expect(listProduce).toMatchSnapshot();
   });

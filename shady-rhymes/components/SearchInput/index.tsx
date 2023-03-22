@@ -21,6 +21,7 @@ const SearchInput = ({
         onChange={onChange}
         name="search-input"
         data-testid="search-input-field"
+        bg="rgb(255,255,255,0.5)"
       />
       <InputRightElement
         children={<Icon as={Search2Icon} color="icon.primary" />}

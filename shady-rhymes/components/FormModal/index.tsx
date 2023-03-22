@@ -1,7 +1,5 @@
 import React, { memo } from 'react';
-import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-
-// Constants
+import { useForm } from 'react-hook-form';
 
 // Types
 import { Product } from '../../types/common';
@@ -9,7 +7,6 @@ import { Product } from '../../types/common';
 // Components
 import Modal from '../Modal';
 import FormInput from '../FormInput';
-
 import { SimpleGrid } from '@chakra-ui/react';
 
 interface FormModalProps {
@@ -69,8 +66,8 @@ const FormModal = ({
           />
           <FormInput
             label="Price:"
-            isInvalid={!!errors.subText}
-            inputName="subText"
+            isInvalid={!!errors.price}
+            inputName="price"
             register={register}
           />
         </SimpleGrid>
