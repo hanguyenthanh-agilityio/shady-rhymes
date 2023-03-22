@@ -8,6 +8,13 @@ const nextConfig = {
     nextScriptWorkers: true
   },
 
+  webpack5: true,
+  webpack: config => {
+    config.resolve.fallback = { fs: false, path: false };
+
+    return config;
+  },
+
   images: {
     domains: ['cdn.pixabay.com'],
     deviceSizes: [375, 768, 1024, 1440, 1920], // Breakpoint
