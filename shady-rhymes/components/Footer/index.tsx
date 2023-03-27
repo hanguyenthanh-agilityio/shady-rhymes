@@ -12,8 +12,7 @@ import { blurDataURL } from '../../utils/utils';
 
 const Footer = () => {
   return (
-    // bgGradient="linear(275.58deg, #000000 0%, #4B4B4B 100%)"
-    <Box bg="#000">
+    <Box bgGradient="linear(275.58deg, #000000 0%, #4B4B4B 100%)">
       <Container>
         <SimpleGrid
           templateColumns={{

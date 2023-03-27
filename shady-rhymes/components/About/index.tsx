@@ -21,7 +21,7 @@ interface AboutProps {
 const About = ({ heading, service }: AboutProps) => {
   return (
     <Box
-      // bgGradient="linear(279.85deg, #FFFFFF 0%, #FAF5F2 100%)"
+      bgGradient="linear(279.85deg, #FFFFFF 0%, #FAF5F2 100%)"
       minH="700px"
       mt="150px"
     >

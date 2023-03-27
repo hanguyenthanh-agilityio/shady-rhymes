@@ -6,8 +6,16 @@ import { Product } from '@/types/common';
 
 const API_KEY = process.env.NEXT_PUBLIC_GAID || '';
 
-export const getProduct = async (page?: number, limit?: number) => {
-  const res = await fetch(API_KEY);
+export const getProduct = async (queryParam?: {
+  page: string;
+  limit: string;
+}) => {
+  const res = await fetch(
+    queryParam
+      ? `${API_KEY}?limit=${queryParam.limit}&page=${queryParam.page}`
+      : API_KEY
+  );
+
   return res.json();
 };
 

@@ -29,6 +29,7 @@ import {
 // Types
 import { Product } from '@/types/common';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const FormModal = dynamic(() => import('../components/FormModal'));
 
@@ -36,14 +37,18 @@ const ConfirmModal = dynamic(() => import('../components/ConfirmModal'));
 
 interface Props {
   blogs: Product[];
-  page: any;
-  limit: number;
+  page: string;
+  limit: string;
 }
 
-const Home: NextPage<Props> = ({ blogs, page, limit }) => {
+const Home: NextPage<Props> = ({ blogs, page = '1', limit = '10' }) => {
   const toast = useToast();
   const [blogId, setBlogId] = useState<string>();
   const [products, setProducts] = useState(blogs);
+  const [params, setParams] = useState({
+    page: parseInt(page),
+    limit: parseInt(limit)
+  });
 
   const {
     isOpen: isOpenAddModal,
@@ -58,12 +63,39 @@ const Home: NextPage<Props> = ({ blogs, page, limit }) => {
   } = useDisclosure();
 
   const route = useRouter();
+  console.log('route', route);
 
-  const pageNumberClick = (page: any, limit: number) => {
+  useEffect(() => {
     route.push({
       pathname: route.pathname,
-      query: { page: page, limit: limit }
+      query: { page: params.page, limit: params.limit }
     });
+  }, [params.limit, params.page]);
+
+  // const pageNumClick = (page: number, limit: number) => {
+  //   route.push({
+  //     pathname: route.pathname,
+  //     query: { limit: limit, page: page }
+  //   });
+  // };
+
+  const handleNextButton = async () => {
+    setParams({ ...params, page: Number(page) + 1 });
+    const res = await getProduct({
+      page: (Number(page) + 1).toString(),
+      limit: limit
+    });
+    setProducts(res);
+  };
+
+  const handlePreviousButton = async () => {
+    setParams({ ...params, page: parseInt(page) - 1 });
+
+    const res = await getProduct({
+      page: (Number(page) - 1).toString(),
+      limit
+    });
+    setProducts(res);
   };
 
   const handleDeleteProduct = async () => {
@@ -95,7 +127,7 @@ const Home: NextPage<Props> = ({ blogs, page, limit }) => {
 
   const handleConfirm = async (data: Product) => {
     await handleAddProduct(data);
-    setProducts([...products, data]);
+    // setProducts([...products, data]);
 
     onCloseAddModal();
     toast({
@@ -128,8 +160,10 @@ const Home: NextPage<Props> = ({ blogs, page, limit }) => {
           </Button>
         </Flex>
         <ListProduct products={products} onClick={handleOpenDeleteModal} />
-
-        <Button onClick={() => pageNumberClick(parseInt(page) + 1, limit)}>
+        <Button disabled={page === '1'} onClick={handlePreviousButton}>
+          Previous
+        </Button>
+        <Button isDisabled={products.length < 10} onClick={handleNextButton}>
           Next
         </Button>
       </Container>
@@ -165,13 +199,13 @@ const Home: NextPage<Props> = ({ blogs, page, limit }) => {
   );
 };
 
-export const getStaticProps = async ({ query, ...props }: { query: any }) => {
+export const getServerSideProps = async ({ query }: { query: any }) => {
   try {
-    const data = await getProduct(query.page, query.limit);
+    const blogs = await getProduct({ page: query.page, limit: query.limit });
 
     return {
       props: {
-        blogs: data,
+        blogs,
         page: query.page,
         limit: query.limit
       }
