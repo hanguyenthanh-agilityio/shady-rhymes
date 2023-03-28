@@ -53,10 +53,6 @@ const Card = ({
               height={height}
               placeholder="blur"
               blurDataURL={blurDataURL()}
-              style={{
-                maxWidth: '100%',
-                height: 'auto'
-              }}
             />
           </a>
         </Link>

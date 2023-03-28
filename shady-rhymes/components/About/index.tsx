@@ -46,12 +46,9 @@ const About = ({ heading, service }: AboutProps) => {
                   {text}
                 </Text>
                 <Flex pt="20px" alignItems="center">
-                  <Avatar
-                    name={avatarName}
-                    src={avatarSrc}
-                    w={{ xs: '40px', md: '60px' }}
-                    h={{ xs: '40px', md: '60px' }}
-                  />
+                  <Box>
+                    <Avatar alt={avatarName} src={avatarSrc} w={50} h={50} />
+                  </Box>
                   <Stack pl="6px">
                     <Text size={{ xs: 'small', md: 'medium' }}>{name}</Text>
                     <Text

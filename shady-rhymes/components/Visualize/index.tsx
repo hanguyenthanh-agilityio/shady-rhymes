@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Container, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 
 // Utils
-import { blurDataURL } from '../../utils/utils';
+import myImageLoader, { blurDataURL } from '../../utils/utils';
 
 const Visualize = () => {
   return (
@@ -34,11 +34,11 @@ const Visualize = () => {
         </Stack>
         <Flex>
           <Image
-            src="/images/visualize.png"
+            src="/visualize.png"
             alt="visualize-image"
             width={900}
             height={600}
-            style={{ objectFit: 'cover' }}
+            // style={{ objectFit: 'cover' }}
             placeholder="blur"
             blurDataURL={blurDataURL()}
           />
