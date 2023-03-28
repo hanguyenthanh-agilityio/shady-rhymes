@@ -24,3 +24,8 @@ export type Product = {
   helperText: string;
   price: string;
 };
+
+export type Param = {
+  page?: number;
+  limit?: number;
+};

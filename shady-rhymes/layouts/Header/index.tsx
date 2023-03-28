@@ -1,5 +1,5 @@
 // Components
-import SearchInput from '../SearchInput';
+import SearchInput from '../../components/SearchInput';
 import { Flex, VStack, Stack, Text, Heading } from '@chakra-ui/react';
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
       <VStack
         w="100%"
         justify="center"
-        // bgGradient="linear(to-r, blackAlpha.600, transparent)"
+        bgGradient="linear(to-r, blackAlpha.600, transparent)"
       >
         <Stack align="center">
           <Heading

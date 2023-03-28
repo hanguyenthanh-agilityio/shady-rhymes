@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import type { NextPage } from 'next';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 // Services
 import { getProduct, handleAddProduct, handleDelete } from '@/services/api';
@@ -8,10 +9,11 @@ import { getProduct, handleAddProduct, handleDelete } from '@/services/api';
 // Constants
 import { SERVICES } from '@/constants/common';
 
+// Layout
+import Layout from '@/layouts/Layout';
+
 // Components
-import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
-import Hero from '@/components/Header';
 import Introduce from '@/components/Introduce';
 import Visualize from '@/components/Visualize';
 import ListProduct from '@/components/ListProduct';
@@ -35,12 +37,18 @@ const ConfirmModal = dynamic(() => import('../components/ConfirmModal'));
 
 interface Props {
   blogs: Product[];
+  page: string;
+  limit: string;
 }
 
-const Home: NextPage<Props> = ({ blogs }) => {
+const Home: NextPage<Props> = ({ blogs, page = '1', limit = '10' }) => {
   const toast = useToast();
   const [blogId, setBlogId] = useState<string>();
   const [products, setProducts] = useState(blogs);
+  const [params, setParams] = useState({
+    page: parseInt(page),
+    limit: parseInt(limit)
+  });
 
   const {
     isOpen: isOpenAddModal,
@@ -53,6 +61,35 @@ const Home: NextPage<Props> = ({ blogs }) => {
     onOpen: onOpenDeleteModal,
     onClose: onCloseDeleteModal
   } = useDisclosure();
+
+  const route = useRouter();
+  console.log('route', route);
+
+  useEffect(() => {
+    route.push({
+      pathname: route.pathname,
+      query: { page: params.page, limit: params.limit }
+    });
+  }, [params.limit, params.page]);
+
+  const handleNextButton = async () => {
+    setParams({ ...params, page: Number(page) + 1 });
+    const res = await getProduct({
+      page: (Number(page) + 1).toString(),
+      limit: limit
+    });
+    setProducts(res);
+  };
+
+  const handlePreviousButton = async () => {
+    setParams({ ...params, page: parseInt(page) - 1 });
+
+    const res = await getProduct({
+      page: (Number(page) - 1).toString(),
+      limit
+    });
+    setProducts(res);
+  };
 
   const handleDeleteProduct = async () => {
     try {
@@ -83,7 +120,7 @@ const Home: NextPage<Props> = ({ blogs }) => {
 
   const handleConfirm = async (data: Product) => {
     await handleAddProduct(data);
-    setProducts([...products, data]);
+    // setProducts([...products, data]);
 
     onCloseAddModal();
     toast({
@@ -94,10 +131,11 @@ const Home: NextPage<Props> = ({ blogs }) => {
     });
   };
 
+  console.log('page', Number(page));
+
   return (
-    <>
+    <Layout>
       <SEO title="Shady Rhymes" description="Nextjs practice" />
-      <Hero />
       <Introduce />
       <Visualize />
       <Container>
@@ -116,9 +154,20 @@ const Home: NextPage<Props> = ({ blogs }) => {
           </Button>
         </Flex>
         <ListProduct products={products} onClick={handleOpenDeleteModal} />
+        <Flex alignItems="center" justifyContent="center" mt="50px">
+          <Button
+            disabled={Number(page) === 1}
+            onClick={handlePreviousButton}
+            mr="20px"
+          >
+            Previous
+          </Button>
+          <Button isDisabled={products.length < 10} onClick={handleNextButton}>
+            Next
+          </Button>
+        </Flex>
       </Container>
       <About heading="What they say about our services" service={SERVICES} />
-      <Footer />
       {/* Open add new product modal */}
 
       {isOpenAddModal && (
@@ -145,17 +194,19 @@ const Home: NextPage<Props> = ({ blogs }) => {
           />
         </Suspense>
       )}
-    </>
+    </Layout>
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async ({ query }: { query: any }) => {
   try {
-    const data = await getProduct();
+    const blogs = await getProduct({ page: query.page, limit: query.limit });
 
     return {
       props: {
-        blogs: data
+        blogs,
+        page: query.page,
+        limit: query.limit
       }
     };
   } catch {}
