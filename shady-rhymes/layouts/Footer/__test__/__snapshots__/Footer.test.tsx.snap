@@ -1,0 +1,364 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component Should render Footer snapshot correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body
+    class="chakra-ui-light"
+  >
+    <div>
+      <div
+        class="css-1klfv6n"
+      >
+        <div
+          class="chakra-container css-vhc7ah"
+        >
+          <div
+            class="css-si3r8h"
+          >
+            <div
+              class="chakra-stack css-n9iquh"
+            >
+              <span
+                style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+              >
+                <span
+                  style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 29.82456140350877% 0px 0px 0px;"
+                />
+                <img
+                  alt="footer-logo"
+                  data-nimg="responsive"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; background-size: cover; background-position: 0% 0%; filter: blur(20px); background-image: url(data:image/svg+xml;base64,Cjxzdmcgd2lkdGg9IjcwMCIgaGVpZ2h0PSI0NzUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMzMzIiBvZmZzZXQ9IjIwJSIgLz4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzIyMiIgb2Zmc2V0PSI1MCUiIC8+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiMzMzMiIG9mZnNldD0iNzAlIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjcwMCIgaGVpZ2h0PSI0NzUiIGZpbGw9IiMzMzMiIC8+CiAgPHJlY3QgaWQ9InIiIHdpZHRoPSI3MDAiIGhlaWdodD0iNDc1IiBmaWxsPSJ1cmwoI2cpIiAvPgogIDxhbmltYXRlIHhsaW5rOmhyZWY9IiNyIiBhdHRyaWJ1dGVOYW1lPSJ4IiBmcm9tPSItNzAwIiB0bz0iNzAwIiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgIC8+Cjwvc3ZnPg==);"
+                />
+                <noscript />
+              </span>
+            </div>
+            <div
+              class="chakra-stack 1231134 css-1njlcjq"
+            >
+              <ul
+                class="css-155za0w"
+                role="list"
+              >
+                <p
+                  class="chakra-text css-0"
+                >
+                  Feature
+                </p>
+                <li
+                  class="css-kyfys8"
+                >
+                  <a
+                    href="/"
+                  >
+                    Our Features
+                    Pricing
+                    Affiliate Program
+                    Press Kit
+                  </a>
+                </li>
+              </ul>
+              <ul
+                class="css-155za0w"
+                role="list"
+              >
+                <p
+                  class="chakra-text css-0"
+                >
+                  Support
+                </p>
+                <li
+                  class="css-kyfys8"
+                >
+                  <a
+                    href="/"
+                  >
+                    Account
+                    Help
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+              <ul
+                class="css-155za0w"
+                role="list"
+              >
+                <p
+                  class="chakra-text css-0"
+                >
+                  Legal
+                </p>
+                <li
+                  class="css-kyfys8"
+                >
+                  <a
+                    href="/"
+                  >
+                    Privacy Policy
+                    Terms of  Use
+                  </a>
+                </li>
+              </ul>
+              <ul
+                class="css-155za0w"
+                role="list"
+              >
+                <p
+                  class="chakra-text css-0"
+                >
+                  Media
+                </p>
+                <li
+                  class="css-kyfys8"
+                >
+                  <a
+                    href="/"
+                  >
+                    Twitter
+                    Product Hunt
+                    Instagram
+                    Github
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p
+            class="chakra-text css-19fkxqh"
+          >
+            Copyright 2021 ©shady rhymes
+          </p>
+        </div>
+      </div>
+      <span
+        hidden=""
+        id="__chakra_env"
+      />
+    </div>
+    <div
+      class="chakra-portal"
+    >
+      <ul
+        aria-live="polite"
+        id="chakra-toast-manager-top"
+        role="region"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <ul
+        aria-live="polite"
+        id="chakra-toast-manager-top-left"
+        role="region"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        aria-live="polite"
+        id="chakra-toast-manager-top-right"
+        role="region"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        aria-live="polite"
+        id="chakra-toast-manager-bottom-left"
+        role="region"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        aria-live="polite"
+        id="chakra-toast-manager-bottom"
+        role="region"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <ul
+        aria-live="polite"
+        id="chakra-toast-manager-bottom-right"
+        role="region"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-1klfv6n"
+    >
+      <div
+        class="chakra-container css-vhc7ah"
+      >
+        <div
+          class="css-si3r8h"
+        >
+          <div
+            class="chakra-stack css-n9iquh"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 29.82456140350877% 0px 0px 0px;"
+              />
+              <img
+                alt="footer-logo"
+                data-nimg="responsive"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; background-size: cover; background-position: 0% 0%; filter: blur(20px); background-image: url(data:image/svg+xml;base64,Cjxzdmcgd2lkdGg9IjcwMCIgaGVpZ2h0PSI0NzUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMzMzIiBvZmZzZXQ9IjIwJSIgLz4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzIyMiIgb2Zmc2V0PSI1MCUiIC8+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiMzMzMiIG9mZnNldD0iNzAlIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjcwMCIgaGVpZ2h0PSI0NzUiIGZpbGw9IiMzMzMiIC8+CiAgPHJlY3QgaWQ9InIiIHdpZHRoPSI3MDAiIGhlaWdodD0iNDc1IiBmaWxsPSJ1cmwoI2cpIiAvPgogIDxhbmltYXRlIHhsaW5rOmhyZWY9IiNyIiBhdHRyaWJ1dGVOYW1lPSJ4IiBmcm9tPSItNzAwIiB0bz0iNzAwIiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgIC8+Cjwvc3ZnPg==);"
+              />
+              <noscript />
+            </span>
+          </div>
+          <div
+            class="chakra-stack 1231134 css-1njlcjq"
+          >
+            <ul
+              class="css-155za0w"
+              role="list"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                Feature
+              </p>
+              <li
+                class="css-kyfys8"
+              >
+                <a
+                  href="/"
+                >
+                  Our Features
+                  Pricing
+                  Affiliate Program
+                  Press Kit
+                </a>
+              </li>
+            </ul>
+            <ul
+              class="css-155za0w"
+              role="list"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                Support
+              </p>
+              <li
+                class="css-kyfys8"
+              >
+                <a
+                  href="/"
+                >
+                  Account
+                  Help
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+            <ul
+              class="css-155za0w"
+              role="list"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                Legal
+              </p>
+              <li
+                class="css-kyfys8"
+              >
+                <a
+                  href="/"
+                >
+                  Privacy Policy
+                  Terms of  Use
+                </a>
+              </li>
+            </ul>
+            <ul
+              class="css-155za0w"
+              role="list"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                Media
+              </p>
+              <li
+                class="css-kyfys8"
+              >
+                <a
+                  href="/"
+                >
+                  Twitter
+                  Product Hunt
+                  Instagram
+                  Github
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p
+          class="chakra-text css-19fkxqh"
+        >
+          Copyright 2021 ©shady rhymes
+        </p>
+      </div>
+    </div>
+    <span
+      hidden=""
+      id="__chakra_env"
+    />
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

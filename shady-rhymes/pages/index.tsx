@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import type { NextPage } from 'next';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 // Services
 import { getProduct, handleAddProduct, handleDelete } from '@/services/api';
@@ -8,10 +9,11 @@ import { getProduct, handleAddProduct, handleDelete } from '@/services/api';
 // Constants
 import { SERVICES } from '@/constants/common';
 
+// Layout
+import Layout from '@/layouts/Layout';
+
 // Components
-import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
-import Hero from '@/components/Header';
 import Introduce from '@/components/Introduce';
 import Visualize from '@/components/Visualize';
 import ListProduct from '@/components/ListProduct';
@@ -28,8 +30,6 @@ import {
 
 // Types
 import { Product } from '@/types/common';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 
 const FormModal = dynamic(() => import('../components/FormModal'));
 
@@ -71,13 +71,6 @@ const Home: NextPage<Props> = ({ blogs, page = '1', limit = '10' }) => {
       query: { page: params.page, limit: params.limit }
     });
   }, [params.limit, params.page]);
-
-  // const pageNumClick = (page: number, limit: number) => {
-  //   route.push({
-  //     pathname: route.pathname,
-  //     query: { limit: limit, page: page }
-  //   });
-  // };
 
   const handleNextButton = async () => {
     setParams({ ...params, page: Number(page) + 1 });
@@ -138,10 +131,11 @@ const Home: NextPage<Props> = ({ blogs, page = '1', limit = '10' }) => {
     });
   };
 
+  console.log('page', Number(page));
+
   return (
-    <>
+    <Layout>
       <SEO title="Shady Rhymes" description="Nextjs practice" />
-      <Hero />
       <Introduce />
       <Visualize />
       <Container>
@@ -160,15 +154,20 @@ const Home: NextPage<Props> = ({ blogs, page = '1', limit = '10' }) => {
           </Button>
         </Flex>
         <ListProduct products={products} onClick={handleOpenDeleteModal} />
-        <Button disabled={page === '1'} onClick={handlePreviousButton}>
-          Previous
-        </Button>
-        <Button isDisabled={products.length < 10} onClick={handleNextButton}>
-          Next
-        </Button>
+        <Flex alignItems="center" justifyContent="center" mt="50px">
+          <Button
+            disabled={Number(page) === 1}
+            onClick={handlePreviousButton}
+            mr="20px"
+          >
+            Previous
+          </Button>
+          <Button isDisabled={products.length < 10} onClick={handleNextButton}>
+            Next
+          </Button>
+        </Flex>
       </Container>
       <About heading="What they say about our services" service={SERVICES} />
-      <Footer />
       {/* Open add new product modal */}
 
       {isOpenAddModal && (
@@ -195,7 +194,7 @@ const Home: NextPage<Props> = ({ blogs, page = '1', limit = '10' }) => {
           />
         </Suspense>
       )}
-    </>
+    </Layout>
   );
 };
 

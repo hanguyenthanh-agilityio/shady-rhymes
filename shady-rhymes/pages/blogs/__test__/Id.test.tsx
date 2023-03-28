@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { PRODUCT } from '../../../constants/common';
 
 // Components
-import Detail from '../[id]';
+import Detail, { getStaticProps } from '../[id]';
 import { ChakraProvider } from '@chakra-ui/react';
 
 describe('Detail component', () => {
@@ -26,4 +26,13 @@ describe('Detail component', () => {
 
     expect(detail).toMatchSnapshot();
   });
+
+  // it('', async () => {
+  //   global.fetch = jest.fn().mockImplementationOnce(() =>
+  //     Promise.resolve({
+  //       json: () => Promise.resolve({ data: PRODUCT })
+  //     })
+  //   );
+  //   const res = await getStaticProps(1);
+  // });
 });
