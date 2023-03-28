@@ -29,7 +29,6 @@ const Footer = () => {
               alt="footer-logo"
               width={228}
               height={68}
-              sizes="(max-width: 768px) 124px"
               placeholder="blur"
               blurDataURL={blurDataURL()}
             />

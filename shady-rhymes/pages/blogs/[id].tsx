@@ -48,7 +48,7 @@ const Detail = ({ blog }: { blog: Product }) => {
               style={{
                 maxWidth: '100%',
                 height: 'auto',
-                objectFit: 'cover',
+                // objectFit: 'cover',
                 alignItems: 'center'
               }}
             />
